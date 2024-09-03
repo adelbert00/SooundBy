@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/inertia-vue": "^0.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
