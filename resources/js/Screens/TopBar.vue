@@ -10,11 +10,9 @@
             :key="section.id"
             class="animate-fadeDownDelay transition-all hover:scale-125 hover:text-indigo-600"
           >
-            <a
-              href="#"
-              @click="() => handleClick(section.id)"
-              >{{ section.name }}</a
-            >
+            <Link :href="getHref(section.id)">
+              {{ section.name }}
+            </Link>
           </li>
         </ul>
       </div>
@@ -25,9 +23,9 @@
 
 <script setup lang="ts">
 import { navigationSections } from '../constants/navigation.ts';
-import { scrollToSection } from '../constants/scroll-to.ts';
+import { Link } from '@inertiajs/vue3';
 
-const handleClick = (sectionId: string) => {
-  scrollToSection(sectionId);
+const getHref = (id: string) => {
+  return id === 'about' ? '/' : `/${id}`;
 };
 </script>

@@ -4,5 +4,5 @@ export const navigationSections = [
   { id: 'reels', name: 'Reel' },
   { id: 'musicreels', name: 'Music' },
   { id: 'audio', name: 'Audio' },
-  { id: 'Contact', name: 'Contact' },
+  { id: 'contact', name: 'Contact' },
 ];

@@ -5,10 +5,13 @@
     @vite('resources/js/app.js')
     @inertiaHead
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
 </head>
 <body>
   @inertia
 
-    <script src="{{ mix('js/app.js') }}"></script>
+   
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
