@@ -11,7 +11,7 @@ Route::get('/samples', function () {
 })->name('samples');
 
 Route::get('/reels', function () {
-    return Inertia::render('Reels');
+    return Inertia::render('DesignReels');
 })->name('reels');
 
 Route::get('/musicreels', function () {
