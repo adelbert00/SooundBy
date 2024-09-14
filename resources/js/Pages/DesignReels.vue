@@ -1,67 +1,105 @@
 <template>
   <Layout>
-    <div class="rounded-xl bg-background pt-5 text-black">
-      <SectionDescription
-        class="rounded-2xl border-8 border-slate-300"
-        title="Sound Design Reels"
-        description="Explore the Sound Design Reels section, where I showcase and describe my sound design creations. 
-        Here, you’ll find a collection of my best work, highlighting innovative soundscapes, detailed audio effects, and unique sound compositions. 
-        Each reel is a testament to my passion and expertise in crafting immersive auditory experiences."
-      />
-    </div>
-    <div class="pt-20">
-      <section id="reels" class="section">
-        <div class="z-50 flex flex-col items-center p-5 text-center">
-          <div class="grid gap-10 md:grid-cols-2">
-            <div
-              v-for="reel in reels"
-              :key="reel.title"
-              class="flex flex-col items-center"
-            >
-              <div class="video-container w-full rounded-md">
-                <iframe
-                  class="sm:w-[360px] md:w-[460px] xl:w-[680px] 2xl:w-[920px]"
-                  :width="reel.width"
-                  :height="reel.height"
-                  :src="reel.src"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-                <p
-                  class="text-shadow-custom-header mt-2 font-custom text-2xl font-normal text-black"
-                >
-                  {{ reel.title }}
-                </p>
-                <p
-                  class="text-shadow-custom-p mt-2 font-mono text-xl font-bold text-gray-600"
-                >
-                  {{ reel.subtitle }}
-                </p>
-              </div>
-            </div>
+    <!-- Reel Section -->
+    <section id="reel" class="section space-y-16">
+      <!-- Reel Videos -->
+      <div class="rounded-3xl p-8">
+        <h1
+          class="font-custom bg-clip-text text-3xl font-normal text-black md:text-4xl"
+        >
+          Reel
+        </h1>
+        <p class="mb-8 text-lg text-gray-700">
+          Zobacz moje najlepsze prace w dziedzinie sound designu i kompozycji
+          muzycznej.
+        </p>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div
+            v-for="index in 4"
+            :key="index"
+            class="h-[300px] w-[800px] transform overflow-hidden rounded-lg shadow-lg transition duration-500 hover:scale-105 hover:shadow-xl"
+          >
+            <iframe
+              :src="`https://www.youtube.com/embed/dQw4w9WgXcQ?${index}`"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="h-full w-full"
+            ></iframe>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+
+      <!-- Creative Process Section -->
+      <div class="relative overflow-hidden rounded-3xl bg-white p-8 shadow-lg">
+        <div
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"
+        ></div>
+        <h2 class="mb-6 text-3xl font-bold text-gray-800">Proces twórczy</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            v-for="(item, index) in creativeProcess"
+            :key="index"
+            class="transform rounded-lg bg-gradient-to-br from-yellow-100 to-orange-100 p-6 shadow-md transition duration-500 hover:scale-105 hover:shadow-xl"
+          >
+            <div class="mb-2 text-3xl font-bold text-orange-500">
+              {{ item.step }}
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-800">
+              {{ item.title }}
+            </h3>
+            <p class="text-gray-600">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script setup lang="ts">
-import { reels } from '../constants/design-reels.ts';
-import SectionDescription from '../components/SectionDescription.vue';
 import Layout from '../Layouts/Layout.vue';
+
+const creativeProcess = [
+  {
+    step: '1',
+    title: 'Analiza projektu',
+    description: 'Zrozumienie potrzeb klienta i celów projektu',
+  },
+  {
+    step: '2',
+    title: 'Koncepcja dźwiękowa',
+    description: 'Tworzenie unikalnej koncepcji dźwiękowej',
+  },
+  {
+    step: '3',
+    title: 'Produkcja i nagrywanie',
+    description: 'Tworzenie i nagrywanie dźwięków',
+  },
+  {
+    step: '4',
+    title: 'Edycja i miksowanie',
+    description: 'Precyzyjne dopracowanie materiału audio',
+  },
+  {
+    step: '5',
+    title: 'Feedback i iteracje',
+    description: 'Dostosowywanie na podstawie feedbacku klienta',
+  },
+  {
+    step: '6',
+    title: 'Finalizacja',
+    description: 'Dostarczenie gotowego produktu audio',
+  },
+];
 </script>
 
 <style scoped>
-.video-container {
+.aspect-w-16 {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
 }
-
-.video-container iframe {
+.aspect-h-9 iframe {
   position: absolute;
   top: 0;
   left: 0;

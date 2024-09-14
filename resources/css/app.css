@@ -31,6 +31,6 @@
 
 @layer base {
   body {
-    @apply bg-background;
+    @apply bg-white font-mono;
   }
 }
