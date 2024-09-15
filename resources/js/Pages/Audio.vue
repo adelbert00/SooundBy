@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div id="audio" class="rounded-xl bg-background text-black">
+    <div id="audio" class="rounded-xl bg-background">
       <SectionDescription
         class="rounded-2xl border-8 border-slate-300"
         title="Audio Sections"

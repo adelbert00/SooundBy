@@ -8,7 +8,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'text-primary-foreground focus-visible:ring-ring font-normalshadow  font-custom inline-flex h-10 items-center justify-center rounded-md px-8 text-xl  focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          'border-input hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-8 text-xl font-normal shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         destructive:
           'border-input hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-8 text-xl font-normal shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         outline:

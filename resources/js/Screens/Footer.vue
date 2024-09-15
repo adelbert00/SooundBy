@@ -1,20 +1,20 @@
 <template>
-  <footer class="text-black">
+  <footer class="text-white">
     <div class="container mx-auto px-8 py-12">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
         <div class="text-center md:text-left">
           <h3 class="mb-4 text-2xl font-semibold">Adelbert</h3>
-          <p class="text-gray-400">
+          <p class="text-lg text-white">
             Tworzę dźwięki, które inspirują i poruszają.
           </p>
         </div>
         <div class="text-center">
-          <h4 class="mb-4 text-xl font-semibold">Szybkie linki</h4>
-          <ul class="space-y-2">
+          <h4 class="mb-4 text-2xl font-semibold">Szybkie linki</h4>
+          <ul class="space-y-2 text-lg">
             <li v-for="item in quickLinks" :key="item">
               <router-link
                 :to="item === 'About' ? '/' : `/${item.toLowerCase()}`"
-                class="text-gray-400 transition duration-300 hover:text-purple-400"
+                class="text-white transition duration-300 hover:text-purple-400"
               >
                 {{ item }}
               </router-link>
@@ -22,15 +22,15 @@
           </ul>
         </div>
         <div class="text-center md:text-right">
-          <h4 class="mb-4 text-xl font-semibold">Kontakt</h4>
-          <p class="text-gray-400">Email: kontakt@sounddesign.com</p>
-          <p class="text-gray-400">Tel: +48 123 456 789</p>
+          <h4 class="mb-4 text-2xl font-semibold">Kontakt</h4>
+          <p class="text-lg text-white">Email: kontakt@sounddesign.com</p>
+          <p class="text-lg text-white">Tel: +48 123 456 789</p>
           <div class="mt-4 flex justify-center space-x-4 md:justify-end">
             <a
               v-for="social in socialLinks"
               :key="social"
               href="#"
-              class="transform text-gray-400 transition duration-300 hover:scale-110 hover:text-purple-400"
+              class="transform text-white transition duration-300 hover:scale-110 hover:text-purple-400"
             >
               <span class="sr-only">{{ social }}</span>
               <svg
@@ -49,8 +49,10 @@
           </div>
         </div>
       </div>
-      <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-        <p>&copy; 2023 Sound Design. Wszelkie prawa zastrzeżone.</p>
+      <div class="mt-8 border-t border-gray-800 pt-8 text-center text-white">
+        <p class="text-xl">
+          &copy; 2023 Sound Design. Wszelkie prawa zastrzeżone.
+        </p>
       </div>
     </div>
   </footer>
