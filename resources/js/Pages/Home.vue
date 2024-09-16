@@ -4,7 +4,7 @@
   >
     <section class="">
       <div class="mx-auto max-w-7xl">
-        <div class="mt-20 flex flex-col text-center">
+        <div class="mt-40 flex flex-col text-center">
           <h1 class="shad font-mono font-bold sm:text-4xl xl:text-5xl">
             Wojciech Faber
           </h1>
@@ -13,7 +13,7 @@
           </p>
         </div>
 
-        <div class="mt-32 grid grid-cols-1 items-center md:grid-cols-2">
+        <div class="mt-16 grid grid-cols-1 items-center md:grid-cols-2">
           <div class="space-y-6">
             <h2 class="font-mono text-3xl font-bold sm:text-4xl md:text-5xl">
               O mnie
@@ -50,18 +50,18 @@
             <div class="">
               <img
                 src="@/assets/photos/gen9820.png"
-                class="absolute top-[700px] h-72 w-72 object-cover"
+                class="absolute top-[720px] h-72 w-72 object-cover"
               />
               <img
                 src="@/assets/photos/Adelbert.jpg"
-                class="absolute top-[900px] h-52 w-72 rounded-lg object-cover opacity-90 shadow-sm"
+                class="absolute top-[910px] h-52 w-72 rounded-lg object-cover opacity-90 shadow-sm"
               />
               <img
                 src="@/assets/photos/GeniusLogo.png"
-                class="absolute top-[1120px] h-10 w-10 rounded-lg"
+                class="absolute top-[1130px] h-10 w-10 rounded-lg"
               />
               <Button
-                class="absolute top-[1120px] ml-20 h-10 w-10 bg-transparent text-xl shadow-none"
+                class="absolute top-[1130px] ml-24 h-10 w-10 bg-transparent text-xl shadow-none transition duration-300 hover:scale-125"
               >
                 Prod.Adelbert
               </Button>
@@ -143,23 +143,58 @@
           </div>
         </div>
 
-        <div class="mt-20 text-center">
-          <h2 class="text-3xl font-bold">Przejdź dalej</h2>
-          <p class="mb-20 text-xl">
-            Sprawdź nasze najnowsze projekty i usługi, które mogą Cię
-            zainteresować.
+        <div class="mx-auto mt-20 max-w-4xl text-center">
+          <h2 class="mb-6 text-4xl font-bold text-white md:text-5xl">
+            Gotowy na przygodę?
+          </h2>
+          <p class="mb-8 text-xl text-purple-200">
+            Posłuchaj próbki mojego brzmienia i rozpocznij współpracę już dziś!
           </p>
-          <div class="flex h-14 justify-center space-x-4">
+          <div class="mb-8 flex flex-col items-center justify-center space-y-6">
+            <div class="flex items-center space-x-4">
+              <Button
+                @click="togglePlay"
+                class="absolute left-1/2 -ml-56 -translate-x-1/2 transform rounded-full bg-purple-600 font-bold text-white transition duration-300 hover:scale-110 hover:bg-purple-700"
+              >
+                <component :is="isPlaying ? Pause : Play" :size="24" />
+              </Button>
+              <div class="relative flex items-center space-x-2">
+                <Volume2
+                  :size="24"
+                  class="absolute left-1/2 -ml-44 -translate-x-1/2 text-purple-300"
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  v-model="volume"
+                  @input="handleVolumeChange"
+                  class="absolute left-1/2 w-[320px] -translate-x-1/2 cursor-pointer rounded-lg"
+                />
+              </div>
+            </div>
+            <p class="italic text-purple-300">
+              {{
+                isPlaying
+                  ? 'Słuchasz próbki dźwięku...'
+                  : 'Kliknij play, aby posłuchać!'
+              }}
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+          >
             <Button
-              class="w-[300px] rounded-full bg-purple-600 px-6 py-3 text-lg font-semibold transition-all duration-300 hover:scale-110 hover:bg-purple-700"
+              to="/projects"
+              class="w-60 transform rounded-full bg-purple-600 font-bold text-white transition duration-300 hover:scale-105 hover:bg-purple-700"
             >
-              Projekty
+              Zobacz Projekty
             </Button>
             <Button
-              variant="destructive"
-              class="w-[300px] rounded-full bg-indigo-600 px-6 py-3 text-lg font-semibold transition duration-300 hover:scale-110 hover:bg-indigo-700"
+              to="/contact"
+              class="w-60 transform rounded-full bg-indigo-600 font-bold text-white transition duration-300 hover:scale-105 hover:bg-indigo-700"
             >
-              Kontakt
+              Skontaktuj się
             </Button>
           </div>
         </div>
@@ -169,11 +204,41 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import Layout from '../Layouts/Layout.vue';
 import Button from '../components/ui/button/Button.vue';
 import { ArrowRight } from 'lucide-vue-next';
+import { ref, onUnmounted } from 'vue';
+import { Play, Pause, Volume2 } from 'lucide-vue-next';
 
+const isPlaying = ref(false);
+const volume = ref(50);
+
+const audio = new Audio(
+  new URL(
+    '@/assets/music/Ambient_No_Man_Sky_C_Minor_117BPM.mp3',
+    import.meta.url
+  ).href
+);
+audio.loop = true;
+
+const togglePlay = () => {
+  if (isPlaying.value) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  isPlaying.value = !isPlaying.value;
+};
+
+const handleVolumeChange = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  audio.volume = Number(target.value) / 100;
+};
+
+onUnmounted(() => {
+  audio.pause();
+  audio.currentTime = 0;
+});
 const imageSrc = new URL('@/assets/photos/prot.jpg', import.meta.url).href;
 
 const images = ref([
