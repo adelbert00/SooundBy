@@ -2,10 +2,10 @@
   <Layout
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
-    <div class="mx-auto max-w-7xl">
-      <div class="mt-20">
-        <h1 class="text-center text-5xl font-bold">Sample Packi</h1>
-        <p class="text-center text-lg">
+    <div class="mx-auto sm:max-w-2xl md:max-w-7xl">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold">Sample Packi</h1>
+        <p class="text-lg">
           Odkryj moją kolekcję starannie przygotowanych sample packów, idealnych
           do różnorodnych projektów audio.
         </p>
@@ -15,7 +15,7 @@
         <div
           v-for="(pack, index) in samplePacks"
           :key="index"
-          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300 hover:scale-105"
+          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition hover:scale-105"
         >
           <img
             :src="pack.imageSrc"
@@ -30,13 +30,14 @@
             <Button
               :to="pack.previewLink"
               variant="link"
-              class="inline-block transition duration-300 hover:scale-125"
+              class="inline-block transition hover:scale-125"
             >
               Podgląd
             </Button>
           </div>
         </div>
       </div>
+
       <section class="relative mt-20 overflow-hidden rounded-3xl">
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
@@ -82,6 +83,42 @@
           </div>
         </div>
       </section>
+
+      <section class="relative mt-20 overflow-hidden rounded-3xl">
+        <div
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+        ></div>
+        <h2 class="mt-20 text-center text-3xl font-bold">
+          Kto korzystał z naszych sampli?
+        </h2>
+        <p class="mt-4 text-center text-lg text-purple-300">
+          Nasze sample znalazły się w produkcjach znanych artystów na całym
+          świecie!
+        </p>
+        <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div
+            v-for="(artist, index) in popularArtists"
+            :key="index"
+            class="rounded-lg bg-gray-800 p-6 text-center transition hover:shadow-lg"
+          >
+            <img
+              :src="artist.imageSrc"
+              class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-md"
+            />
+            <h3 class="mb-2 text-xl font-semibold text-purple-400">
+              {{ artist.name }}
+            </h3>
+            <p class="mb-4 text-gray-300">{{ artist.description }}</p>
+            <ul class="list-inside list-disc space-y-2 text-gray-300">
+              <li v-for="(track, i) in artist.tracks" :key="i">{{ track }}</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-10 text-center text-sm italic text-purple-400">
+          Zachęcamy do korzystania z naszych darmowych sampli i dołącz do grona
+          zadowolonych artystów!
+        </p>
+      </section>
     </div>
   </Layout>
 </template>
@@ -90,4 +127,5 @@
 import Button from '../components/ui/button/Button.vue';
 import Layout from '../Layouts/Layout.vue';
 import { samplePacks } from '@/constants/samplePacks';
+import { popularArtists } from '@/constants/popularArtists';
 </script>

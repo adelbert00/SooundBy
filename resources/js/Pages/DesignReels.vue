@@ -3,7 +3,7 @@
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
     <div class="mx-auto max-w-7xl">
-      <div class="mt-20">
+      <div class="">
         <h1 class="text-center text-5xl font-bold">Reel</h1>
         <p class="text-center text-lg">
           Zobacz moje najlepsze prace w dziedzinie sound designu i kompozycji
@@ -47,21 +47,28 @@
         </Accordion>
       </div>
 
-      <section class="mt-20 rounded-lg bg-gray-800 p-8 shadow-xl">
-        <h2 class="mb-6 text-center text-3xl font-bold">Proces twórczy</h2>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div
-            v-for="(item, index) in processSteps"
-            :key="index"
-            class="transform rounded-lg bg-gradient-to-br from-purple-900 to-indigo-900 p-6 shadow-md transition duration-500 hover:scale-105 hover:shadow-xl"
-          >
-            <div class="mb-2 text-3xl font-bold text-purple-400">
-              {{ item.step }}
+      <section class="relative mt-20 overflow-hidden rounded-3xl">
+        <div
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+        ></div>
+        <div class="mt-20 rounded-lg bg-gray-800 p-8 shadow-xl">
+          <h2 class="mb-10 mt-10 text-center text-3xl font-bold">
+            Proces twórczy
+          </h2>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              v-for="(item, index) in processSteps"
+              :key="index"
+              class="transform rounded-lg bg-gradient-to-br from-purple-900 to-indigo-900 p-6 shadow-md transition duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <div class="mb-2 text-3xl font-bold text-purple-400">
+                {{ item.step }}
+              </div>
+              <h3 class="mb-2 text-xl font-semibold text-white">
+                {{ item.title }}
+              </h3>
+              <p class="text-gray-300">{{ item.description }}</p>
             </div>
-            <h3 class="mb-2 text-xl font-semibold text-white">
-              {{ item.title }}
-            </h3>
-            <p class="text-gray-300">{{ item.description }}</p>
           </div>
         </div>
       </section>

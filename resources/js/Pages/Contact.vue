@@ -3,7 +3,7 @@
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
     <div class="mx-auto max-w-7xl">
-      <div class="mt-20 text-center">
+      <div class="text-center">
         <h1 class="text-5xl font-bold">Kontakt</h1>
         <p class="mt-4 text-xl">
           Masz pytania lub chcesz współpracować? Skontaktuj się za pomocą
@@ -13,7 +13,7 @@
 
       <div class="mt-20 grid grid-cols-1 gap-12 md:grid-cols-2">
         <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-          <h2 class="mb-6 text-3xl font-bold">Wyślij wiadomość</h2>
+          <h2 class="mb-6 text-2xl font-bold">Wyślij wiadomość</h2>
           <Form @submit="handleSubmit" class="space-y-6">
             <div v-for="field in fields" :key="field.model">
               <FormItem
@@ -55,7 +55,7 @@
 
         <div class="space-y-8">
           <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-            <h2 class="mb-6 text-3xl font-bold">Informacje kontaktowe</h2>
+            <h2 class="mb-6 text-2xl font-bold">Informacje kontaktowe</h2>
             <div class="space-y-4">
               <div class="flex items-center">
                 <Phone class="mr-4 h-6 w-6 text-purple-400" />
@@ -73,7 +73,7 @@
           </div>
 
           <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-            <h2 class="mb-6 text-3xl font-bold">
+            <h2 class="mb-6 text-2xl font-bold">
               Dlaczego warto współpracować ze mną?
             </h2>
             <ul class="space-y-4">
