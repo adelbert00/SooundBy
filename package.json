@@ -31,10 +31,13 @@
         "vue-tsc": "^2.1.4"
     },
     "dependencies": {
+        "@emailjs/browser": "^4.4.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^1.2.0",
+        "@vee-validate/zod": "^4.13.2",
         "@vitejs/plugin-vue": "^5.1.3",
+        "@vueuse/core": "^11.1.0",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "emailjs-com": "^3.2.0",
@@ -43,8 +46,10 @@
         "radix-vue": "^1.9.5",
         "shadcn-vue": "^0.10.5",
         "tailwind-merge": "^2.5.2",
+        "vee-validate": "^4.13.2",
         "vue": "^3.5.0",
         "vue-audio-visual": "^3.0.8",
-        "vue-jsx": "^0.2.9"
+        "vue-jsx": "^0.2.9",
+        "zod": "^3.23.8"
     }
 }

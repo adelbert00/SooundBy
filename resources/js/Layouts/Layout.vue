@@ -1,6 +1,6 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <TopBar class="pb-20" />
+    <TopBar />
     <main class="flex-grow">
       <slot />
     </main>

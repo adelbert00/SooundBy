@@ -1,159 +1,102 @@
 <template>
-  <Layout>
-    <div id="audio" class="rounded-xl bg-background">
-      <SectionDescription
-        class="rounded-2xl border-8 border-slate-300"
-        title="Audio Sections"
-        description="Below are various sections containing different types of audio players including music scores, sound effects, foley examples, and percussion examples. Explore each section to find different types of audio content."
-      />
-    </div>
+  <Layout
+    class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
+  >
+    <div class="mx-auto max-w-7xl">
+      <div class="mt-20">
+        <h1 class="text-center text-5xl font-bold">Sekcje Audio</h1>
+        <p class="text-center text-lg">
+          Poniżej znajdują się różne sekcje zawierające różne typy odtwarzaczy
+          audio, w tym partytury muzyczne, efekty dźwiękowe, przykłady foley i
+          przykłady perkusji. Przeglądaj każdą sekcję, aby znaleźć różne rodzaje
+          zawartości audio.
+        </p>
+      </div>
 
-    <div class="pt-10">
-      <section class="section">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4">
-          <div class="z-50 flex flex-col items-center text-center">
-            <h1
-              class="text-shadow-custom-header pb-10 font-custom text-5xl font-bold italic"
-            >
-              Music
-              <br />
-              Scores
-            </h1>
-            <div class="grid-cols-1 pb-10 sm:grid-cols-2 md:grid-cols-3">
-              <div v-for="track in musicScores" :key="track.src">
-                <audio
-                  controls
-                  class="audio-player audio md:w-[225px] xl:w-[320px]"
-                >
-                  <source :src="track.src" type="audio/mpeg" />
-                </audio>
-                <p
-                  class="pt-10 font-mono text-xl font-bold text-black md:text-lg xl:text-2xl"
-                >
-                  {{ track.title }}
-                </p>
-                <p
-                  class="pb-10 font-mono text-xl font-semibold text-gray-600 md:text-lg xl:text-xl"
-                >
-                  {{ track.details }}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="z-50 flex flex-col items-center text-center">
-            <h1
-              class="text-shadow-custom-header font-custom text-5xl font-semibold italic"
-            >
-              Sound
-              <br />
-              Effects
-            </h1>
-            <div class="grid-cols-1 pt-10 sm:grid-cols-2 md:grid-cols-3">
+      <div class="mt-20 grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div
+          v-for="(track, index) in audioCategories"
+          :key="index"
+          class="overflow-hidden rounded-3xl bg-gradient-to-br"
+          :class="track.color"
+        >
+          <div class="p-8">
+            <h2 class="mb-6 text-3xl font-bold text-white">
+              {{ track.title }}
+            </h2>
+            <div class="space-y-4">
               <div
-                class=""
-                v-for="sfx in soundEffects"
-                :key="sfx.src"
-                loading="lazy"
+                v-for="(example, i) in track.examples"
+                :key="i"
+                class="rounded-xl bg-black bg-opacity-30 p-4"
               >
-                <audio
-                  controls
-                  class="audio-player audio md:w-[225px] xl:w-[320px]"
-                  loading="lazy"
-                >
-                  <source :src="sfx.src" :type="sfx.type" />
+                <h3 class="mb-2 text-xl font-medium text-white">
+                  {{ example.title }}
+                </h3>
+                <audio controls class="w-full">
+                  <source :src="example.src" type="audio/mpeg" />
+                  Twój przeglądarka nie obsługuje elementu audio.
                 </audio>
-                <p
-                  class="pt-10 font-mono text-xl font-bold text-black md:text-lg xl:text-2xl"
-                >
-                  {{ sfx.title }}
-                </p>
-                <p
-                  class="pb-10 font-mono text-xl font-semibold text-gray-600 md:text-lg xl:text-xl"
-                >
-                  {{ sfx.details }}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="z-50 flex flex-col items-center text-center">
-            <h1
-              class="text-shadow-custom-header font-custom text-5xl font-semibold italic"
-            >
-              Foley
-              <br />
-              Examples
-            </h1>
-            <div class="grid-cols-1 pt-10 sm:grid-cols-2 md:grid-cols-3">
-              <div class="" v-for="foley in foleyExamples" :key="foley.src">
-                <audio
-                  controls
-                  class="audio-player audio md:w-[225px] xl:w-[320px]"
-                  lazy="loading"
-                >
-                  <source :src="foley.src" :type="foley.type" />
-                </audio>
-                <p
-                  class="pt-10 font-mono text-xl font-bold text-black md:text-lg xl:text-2xl"
-                >
-                  {{ foley.title }}
-                </p>
-                <p
-                  class="pb-10 font-mono text-xl font-semibold text-gray-600 md:text-lg xl:text-xl"
-                >
-                  {{ foley.details }}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="z-50 flex flex-col items-center text-center">
-            <h1
-              class="text-shadow-custom-header font-custom text-5xl font-semibold italic"
-            >
-              Percs
-              <br />
-              Examples
-            </h1>
-            <div class="grid-cols-1 pt-10 sm:grid-cols-2 md:grid-cols-3">
-              <div
-                class=""
-                v-for="perc in percExamples"
-                :key="perc.src"
-                loading="lazy"
-              >
-                <audio
-                  controls
-                  class="audio-player audio md:w-[225px] xl:w-[320px]"
-                  loading="lazy"
-                >
-                  <source :src="perc.src" :type="perc.type" />
-                </audio>
-                <p
-                  class="text-shadow-custom-header pt-10 font-mono text-xl font-bold text-black md:text-lg xl:text-2xl"
-                >
-                  {{ perc.title }}
-                </p>
-                <p
-                  class="text-shadow-custom-p pb-10 font-mono text-xl font-semibold text-gray-600 md:text-lg xl:text-xl"
-                >
-                  {{ perc.details }}
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div class="mt-20 rounded-lg bg-gray-800 p-8 shadow-xl">
+        <h2 class="mb-8 text-center text-3xl font-bold">
+          Dlaczego Jakość Dźwięku Jest Ważna
+        </h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div
+            class="rounded-lg bg-gradient-to-br from-purple-900 to-indigo-900 p-6 shadow-md"
+          >
+            <h3 class="mb-4 text-2xl font-semibold text-purple-400">
+              Korzyści z Wysokiej Jakości Dźwięku
+            </h3>
+            <ul class="list-inside list-disc space-y-2 text-gray-300">
+              <li>Zwiększa immersję i zaangażowanie</li>
+              <li>Buduje atmosferę i wzmacnia emocje</li>
+              <li>Poprawia ogólną jakość projektu i profesjonalizm</li>
+              <li>Może być kluczowym elementem budowania marki</li>
+              <li>Wspiera narrację i przekaz</li>
+            </ul>
+          </div>
+          <div
+            class="rounded-lg bg-gradient-to-br from-indigo-900 to-purple-900 p-6 shadow-md"
+          >
+            <h3 class="mb-4 text-2xl font-semibold text-indigo-400">
+              Moje Podejście do Jakości Dźwięku
+            </h3>
+            <ul class="list-inside list-disc space-y-2 text-gray-300">
+              <li>Wykorzystanie najwyższej jakości sprzętu nagrywającego</li>
+              <li>Zastosowanie zaawansowanych technik przetwarzania dźwięku</li>
+              <li>Zwracanie uwagi na szczegóły i niuanse w każdym projekcie</li>
+              <li>
+                Dopasowanie dźwięku do konkretnego medium (film, gra, reklama)
+              </li>
+              <li>Współpraca z ekspertami w dziedzinie masteringu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
 
 <script setup>
-import { musicScores } from '../constants/audio-export.ts';
-import { soundEffects } from '../constants/audio-export.ts';
-import { foleyExamples } from '../constants/audio-export.ts';
-import { percExamples } from '../constants/audio-export.ts';
-import SectionDescription from '../components/SectionDescription.vue';
+import { audioCategories } from '@/constants/audio-export';
 import Layout from '../Layouts/Layout.vue';
 </script>
+
+<style scoped>
+.aspect-w-16 {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.aspect-h-9 {
+  position: relative;
+}
+</style>

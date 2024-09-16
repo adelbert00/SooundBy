@@ -8,16 +8,16 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'border-input hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-8 text-xl font-normal shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          ' hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md  px-8 text-xl font-normal  transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         destructive:
-          'border-input hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-8 text-xl font-normal shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          ' hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md px-8 text-xl font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         outline:
-          'border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
+          ' bg-white hover:bg-slate-100 hover:text-slate-900  dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         secondary:
           'bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80',
         ghost:
           'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
-        link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
+        link: 'inline-block rounded-full bg-purple-600  text-sm font-semibold text-white  hover:bg-purple-700',
       },
       size: {
         default: 'h-10 px-4 py-2',

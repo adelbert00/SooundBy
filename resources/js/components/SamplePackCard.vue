@@ -31,7 +31,7 @@ defineProps<{
 
 <style scoped>
 .cover-image {
-  width: 100%; /* Ensure the image fills the card width */
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
