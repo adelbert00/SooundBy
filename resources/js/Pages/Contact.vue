@@ -49,8 +49,11 @@
             <Button
               type="submit"
               class="w-full transform bg-gradient-to-r from-purple-500 to-indigo-500 text-lg font-semibold transition duration-300 hover:scale-105 hover:from-purple-600 hover:to-indigo-600"
+              :disabled="isLoading"
+              aria-label="Wyślij wiadomość"
             >
-              Wyślij wiadomość
+              <span v-if="!isLoading">Wyślij wiadomość</span>
+              <span v-else>Wysyłanie...</span>
             </Button>
           </Form>
         </div>
@@ -115,7 +118,7 @@
           </div>
         </div>
       </div>
-
+      <Testimonials />
       <Modal :message="modalMessage" v-model:isVisible="isModalVisible" />
     </section>
   </Layout>
@@ -123,16 +126,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import emailjs from '@emailjs/browser';
+import { useReCaptcha } from 'vue-recaptcha-v3';
+import Layout from '../Layouts/Layout.vue';
 import Modal from '../components/Modal.vue';
 import { Phone, Mail, MapPin, Check } from 'lucide-vue-next';
-import Layout from '../Layouts/Layout.vue';
 import { Form } from 'vee-validate';
 import FormItem from '@/components/ui/form/FormItem.vue';
 import Input from '@/components/ui/input/Input.vue';
 import Label from '@/components/ui/label/Label.vue';
 import Textarea from '@/components/ui/textarea/Textarea.vue';
 import Button from '../components/ui/button/Button.vue';
+import Testimonials from './Testimonials.vue';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -151,6 +156,7 @@ const formData = ref<FormData>({
 const errors = ref<{ [key: string]: string }>({});
 const isModalVisible = ref(false);
 const modalMessage = ref('');
+const isLoading = ref(false);
 
 type FormFieldKeys = keyof FormData;
 
@@ -183,15 +189,26 @@ const validateForm = () => {
   return Object.keys(errors.value).length === 0;
 };
 
+const { executeRecaptcha } = useReCaptcha();
+
 const handleSubmit = async () => {
   if (!validateForm()) return;
 
+  isLoading.value = true;
+
   try {
+    const token = await executeRecaptcha('submit_form');
+    const payload = {
+      ...formData.value,
+      recaptcha: token,
+    };
+
     const emailParams = {
       from_name: formData.value.name,
       from_email: formData.value.email,
       subject: formData.value.subject,
       message: formData.value.message,
+      recaptcha: token,
     };
 
     console.log('Sending email with params:', emailParams);
@@ -212,6 +229,7 @@ const handleSubmit = async () => {
   }
 
   isModalVisible.value = true;
+  isLoading.value = false;
   resetForm();
 };
 

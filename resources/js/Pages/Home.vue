@@ -34,6 +34,7 @@
         <img
           :src="imageSrc"
           class="rounded-3xl object-cover sm:w-[300px] md:h-full md:w-full"
+          loading="lazy"
         />
       </div>
 
@@ -46,14 +47,17 @@
           <img
             src="@/assets/photos/gen9820.png"
             class="absolute -top-[220px] h-72 w-72 object-cover sm:hidden md:block xl:-top-[220px]"
+            loading="lazy"
           />
           <img
             src="@/assets/photos/Adelbert.jpg"
             class="absolute -top-8 h-40 w-72 rounded-lg object-cover shadow-sm sm:hidden md:block xl:-top-8 xl:h-48"
+            loading="lazy"
           />
           <img
             src="@/assets/photos/GeniusLogo.png"
             class="absolute top-[150px] h-10 w-10 rounded-lg sm:hidden md:block xl:top-[180px]"
+            loading="lazy"
           />
           <Button
             class="absolute top-[145px] ml-10 h-10 w-10 bg-transparent text-xl transition duration-300 hover:scale-125 sm:hidden md:block xl:top-[175px]"
@@ -85,7 +89,11 @@
           :key="index"
           class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition hover:scale-105"
         >
-          <img :src="image.src" class="h-64 w-full object-cover" />
+          <img
+            :src="image.src"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
           <div class="p-6">
             <h3 class="text-xl font-semibold">{{ image.title }}</h3>
             <p class="text-sm text-gray-300">{{ image.description }}</p>

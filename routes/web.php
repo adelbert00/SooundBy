@@ -25,3 +25,6 @@ Route::get('/audio', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
+
+
+Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');

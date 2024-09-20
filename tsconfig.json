@@ -9,6 +9,7 @@
     "jsx": "preserve",
     "sourceMap": true,
     "baseUrl": ".",
+    "typeRoots": ["./resources/js/types", "./node_modules/@types"],
     "paths": {
       "@/*": ["./resources/js/*"]
     }

@@ -86,6 +86,7 @@
           </div>
         </div>
       </section>
+      <Store />
     </section>
   </Layout>
 </template>
@@ -94,4 +95,5 @@
 import Layout from '../Layouts/Layout.vue';
 import CustomAudioPlayer from '../components/ui/CustomAudioPlayer.vue';
 import { audioCategories } from '@/constants/audio-export';
+import Store from './Store.vue';
 </script>

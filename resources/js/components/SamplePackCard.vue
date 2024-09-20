@@ -3,7 +3,12 @@
     class="sample-pack-card relative transform rounded-lg p-4 shadow-lg transition-transform duration-500 hover:scale-105"
   >
     <div class="relative z-10">
-      <img :src="pack.imageSrc" :alt="pack.name" class="cover-image" />
+      <img
+        :src="pack.imageSrc"
+        :alt="pack.name"
+        class="cover-image"
+        loading="lazy"
+      />
       <h2 class="pack-name mt-2 text-xl font-semibold">{{ pack.name }}</h2>
       <ul class="contents-list ml-5 mt-2 list-disc">
         <li v-for="(content, index) in pack.contents" :key="index">

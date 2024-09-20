@@ -21,6 +21,7 @@
             :src="pack.imageSrc"
             :alt="pack.name"
             class="h-64 w-full object-cover"
+            loading="lazy"
           />
           <div class="p-6">
             <h2 class="mb-2 text-lg font-semibold">{{ pack.name }}</h2>
@@ -112,6 +113,7 @@
             <img
               :src="artist.imageSrc"
               class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-md"
+              loading="lazy"
             />
             <h3 class="mb-2 text-xl font-semibold text-purple-400">
               {{ artist.name }}
