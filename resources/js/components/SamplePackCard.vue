@@ -13,7 +13,7 @@
       <a
         :href="pack.previewLink"
         target="_blank"
-        class="preview-link mt-4 inline-block text-blue-500 hover:underline"
+        class="preview-link mt-4 inline-block font-bold text-blue-500 hover:underline"
       >
         Podgląd
       </a>

@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 @font-face {
-  font-family: 'New Amsterdam';
-  src: url('/public/fonts/NewAmsterdam-Regular.ttf');
-  font-weight: 400;
+  font-family: 'Lato';
   font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/lato/v17/S6u8w4BMUTPHh30wWw.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: bold;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.ttf')
+    format('truetype');
 }

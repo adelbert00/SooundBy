@@ -1,23 +1,22 @@
 <template>
   <nav class="bg-transparent">
-    <div>
-      <div class="flex h-16 items-center">
-        <div class="w-full text-white">
-          <ul
-            class="text-shadow-custom-p flex justify-center font-custom font-normal sm:gap-5 sm:text-base md:text-3xl xl:gap-20"
+    <div class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
+      <ul
+        class="flex w-full justify-center space-x-2 text-white md:space-x-6 xl:space-x-10"
+      >
+        <li
+          v-for="section in navigationSections"
+          :key="section.id"
+          class="transition-transform duration-300 hover:scale-105 hover:text-purple-400"
+        >
+          <Link
+            :href="getHref(section.id)"
+            class="text-base font-bold md:text-2xl xl:text-3xl"
           >
-            <li
-              v-for="section in navigationSections"
-              :key="section.id"
-              class="animate-fadeDownDelay transition-all hover:scale-125 hover:text-purple-900"
-            >
-              <Link :href="getHref(section.id)">
-                {{ section.name }}
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+            {{ section.name }}
+          </Link>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>

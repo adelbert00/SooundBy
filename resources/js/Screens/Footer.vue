@@ -1,47 +1,46 @@
 <template>
-  <footer class="mx-auto max-w-4xl bg-transparent text-center text-white">
+  <footer class="bg-transparent text-white">
     <div
-      class="absolute left-1/2 w-[1280px] -translate-x-1/2 justify-center border-b-2 border-black"
+      class="absolute left-1/2 w-[360px] -translate-x-1/2 justify-center border-b-2 border-black md:w-[720px] xl:w-[1280px]"
     ></div>
-    <div class="px-6 pt-6">
+    <section
+      class="mx-auto w-[360px] px-6 pt-6 md:w-full md:max-w-4xl xl:max-w-7xl"
+    >
       <Form>
         <div
-          class="gird-cols-1 grid items-center justify-center md:grid-cols-3"
+          class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0"
         >
-          <div class="md:mb-6">
-            <p>
-              <strong>Sign up for our newsletter</strong>
+          <div class="text-center md:text-left">
+            <p class="text-lg font-semibold">
+              <strong>Zapisz się do naszego newslettera</strong>
             </p>
           </div>
 
-          <div
-            class="relative flex items-center md:mb-6"
-            data-twe-input-wrapper-init
-          >
+          <div class="flex w-full max-w-md items-center md:w-auto">
             <Input
               type="email"
-              class="w-[320px] justify-center rounded bg-transparent"
-              placeholder="Email address"
+              class="w-full rounded bg-transparent text-black placeholder-gray-500 md:w-auto"
+              placeholder="Adres e-mail"
             />
-          </div>
-
-          <div class="mb-6">
             <Button
-              type="Button"
-              class="mr-32 rounded-lg bg-primary text-lg uppercase"
-              data-twe-ripple-init
-              data-twe-ripple-color="light"
+              type="button"
+              class="ml-2 rounded-lg bg-primary px-4 py-2 text-lg font-bold uppercase"
             >
               Subscribe
             </Button>
           </div>
         </div>
       </Form>
-    </div>
+    </section>
 
     <div class="bg-black/5 p-4 text-center">
       © 2024 Copyright:
-      <a href="https://tw-elements.com/">SooundBy</a>
+      <a
+        href="https://tw-elements.com/"
+        class="text-purple-400 hover:text-purple-300"
+      >
+        SoundBy
+      </a>
     </div>
   </footer>
 </template>

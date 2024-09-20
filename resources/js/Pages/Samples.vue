@@ -2,20 +2,20 @@
   <Layout
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
-    <div class="mx-auto sm:max-w-2xl md:max-w-7xl">
+    <section class="mx-auto w-full max-w-7xl px-4">
       <div class="text-center">
-        <h1 class="text-5xl font-bold">Sample Packi</h1>
-        <p class="text-lg">
+        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Sample Packi</h1>
+        <p class="text-lg md:text-xl">
           Odkryj moją kolekcję starannie przygotowanych sample packów, idealnych
           do różnorodnych projektów audio.
         </p>
       </div>
 
-      <div class="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
         <div
           v-for="(pack, index) in samplePacks"
           :key="index"
-          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition hover:scale-105"
+          class="transform overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-transform hover:scale-105"
         >
           <img
             :src="pack.imageSrc"
@@ -23,14 +23,14 @@
             class="h-64 w-full object-cover"
           />
           <div class="p-6">
-            <h1 class="mb-2 text-lg font-semibold">{{ pack.name }}</h1>
+            <h2 class="mb-2 text-lg font-semibold">{{ pack.name }}</h2>
             <ul class="mb-4 list-inside list-disc">
               <li v-for="(item, i) in pack.contents" :key="i">{{ item }}</li>
             </ul>
             <Button
               :to="pack.previewLink"
               variant="link"
-              class="inline-block transition hover:scale-125"
+              class="inline-block transform transition-transform hover:scale-110"
             >
               Podgląd
             </Button>
@@ -42,7 +42,7 @@
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
         ></div>
-        <h2 class="mt-20 text-center text-3xl font-bold">
+        <h2 class="mt-10 text-center text-2xl font-bold md:text-3xl">
           Jak korzystać z naszych sampli?
         </h2>
         <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -50,35 +50,43 @@
             <h3 class="mb-4 text-xl font-semibold text-purple-400">
               Wskazówki
             </h3>
-            <ul class="list-inside list-disc space-y-2">
+            <ul class="list-inside list-disc space-y-2 text-base text-gray-300">
               <li>
                 Eksperymentuj z warstwowaniem dźwięków dla uzyskania bogatszych
-                tekstur
-              </li>
-              <li>Używaj efektów, aby dostosować sample do swojego projektu</li>
-              <li>
-                Łącz różne sample packi dla stworzenia unikalnego brzmienia
+                tekstur.
               </li>
               <li>
-                Nie bój się modyfikować sampli - to klucz do oryginalności!
+                Używaj efektów, aby dostosować sample do swojego projektu.
+              </li>
+              <li>
+                Łącz różne sample packi dla stworzenia unikalnego brzmienia.
+              </li>
+              <li>
+                Nie bój się modyfikować sampli — to klucz do oryginalności!
               </li>
             </ul>
           </div>
+
           <div class="rounded-lg bg-gray-800 p-6">
             <h3 class="mb-4 text-xl font-semibold text-purple-400">
               Proces twórczy
             </h3>
-            <ol class="list-inside list-decimal space-y-2">
-              <li>Wybierz odpowiedni sample pack do swojego projektu</li>
+            <ol
+              class="list-inside list-decimal space-y-2 text-base text-gray-300"
+            >
+              <li>Wybierz odpowiedni sample pack do swojego projektu.</li>
               <li>
-                Przesłuchaj dostępne sample i wybierz te, które najlepiej pasują
+                Przesłuchaj dostępne sample i wybierz te, które najlepiej
+                pasują.
               </li>
               <li>
-                Zaimportuj wybrane sample do swojego DAW lub edytora audio
+                Zaimportuj wybrane sample do swojego DAW lub edytora audio.
               </li>
-              <li>Eksperymentuj z efektami i miksowaniem</li>
-              <li>Dostosuj sample do tempa i tonacji twojego projektu</li>
-              <li>Połącz sample z innymi elementami audio w twoim projekcie</li>
+              <li>Eksperymentuj z efektami i miksowaniem.</li>
+              <li>Dostosuj sample do tempa i tonacji Twojego projektu.</li>
+              <li>
+                Połącz sample z innymi elementami audio w swoim projekcie.
+              </li>
             </ol>
           </div>
         </div>
@@ -88,7 +96,7 @@
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
         ></div>
-        <h2 class="mt-20 text-center text-3xl font-bold">
+        <h2 class="mt-10 text-center text-2xl font-bold md:text-3xl">
           Kto korzystał z naszych sampli?
         </h2>
         <p class="mt-4 text-center text-lg text-purple-300">
@@ -99,7 +107,7 @@
           <div
             v-for="(artist, index) in popularArtists"
             :key="index"
-            class="rounded-lg bg-gray-800 p-6 text-center transition hover:shadow-lg"
+            class="transform rounded-lg bg-gray-800 p-6 text-center transition-transform hover:scale-105"
           >
             <img
               :src="artist.imageSrc"
@@ -119,13 +127,14 @@
           zadowolonych artystów!
         </p>
       </section>
-    </div>
+    </section>
   </Layout>
 </template>
 
 <script setup lang="ts">
-import Button from '../components/ui/button/Button.vue';
+import { ref } from 'vue';
 import Layout from '../Layouts/Layout.vue';
+import Button from '../components/ui/button/Button.vue';
 import { samplePacks } from '@/constants/samplePacks';
 import { popularArtists } from '@/constants/popularArtists';
 </script>

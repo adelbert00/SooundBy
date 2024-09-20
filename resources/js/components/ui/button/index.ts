@@ -8,9 +8,9 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          ' hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md  px-8 text-xl font-normal  transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          ' hover:text-accent-foreground focus-visible:ring-ring bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md  px-8 text-xl font-normal  transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         destructive:
-          ' hover:text-accent-foreground focus-visible:ring-ring bg-background font-custom hover:bg-accent inline-flex h-10 items-center justify-center rounded-md px-8 text-xl font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          ' hover:text-accent-foreground focus-visible:ring-ring bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md px-8 text-xl font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         outline:
           ' bg-white hover:bg-slate-100 hover:text-slate-900  dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         secondary:

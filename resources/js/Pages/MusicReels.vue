@@ -2,10 +2,10 @@
   <Layout
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
-    <div class="relative mx-auto max-w-7xl overflow-hidden rounded-3xl">
+    <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center">
-        <h1 class="mb-8 text-5xl font-bold">Muzyka</h1>
-        <p class="text-lg">
+        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Muzyka</h1>
+        <p class="text-lg md:text-xl">
           Odkryj różnorodną kolekcję utworów, które odzwierciedlają moją pasję
           do tworzenia muzyki. Każda piosenka to unikalna podróż dźwiękowa,
           starannie skomponowana i wyprodukowana, aby inspirować i zachwycać
@@ -13,11 +13,11 @@
         </p>
       </div>
 
-      <div class="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
           v-for="(music, index) in musicList"
           :key="index"
-          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-transform duration-300 hover:scale-105"
+          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg"
         >
           <div class="aspect-w-16 aspect-h-9 relative">
             <iframe
@@ -28,19 +28,19 @@
             ></iframe>
           </div>
           <div class="p-4">
-            <h3 class="mb-2 text-xl font-semibold">{{ music.title }}</h3>
-            <p class="mb-4 text-gray-400">Producent: {{ music.producer }}</p>
+            <h3 class="text-xl font-semibold">{{ music.title }}</h3>
+            <p class="text-gray-400">Producent: {{ music.producer }}</p>
             <a
               :href="`https://www.youtube.com/watch?v=${music.src.split('/').pop()}`"
               target="_blank"
               rel="noopener noreferrer"
-              class="mr-4 inline-flex items-center text-purple-400 hover:text-purple-300"
+              class="mr-4 inline-flex items-center text-purple-400 transition duration-300 hover:scale-105 hover:text-purple-300"
             >
               <Play class="mr-2 h-5 w-5" />
               Odtwórz na YouTube
             </a>
             <button
-              class="inline-flex items-center text-green-400 hover:text-green-300"
+              class="inline-flex items-center text-green-400 transition duration-300 hover:scale-105 hover:text-green-300"
             >
               <Headphones class="mr-2 h-5 w-5" />
               Pobierz MP3
@@ -48,12 +48,13 @@
           </div>
         </div>
       </div>
-      <section class="relative mt-20 overflow-hidden rounded-3xl">
+
+      <section class="relative mt-12 overflow-hidden rounded-3xl">
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
         ></div>
-        <div class="mt-32 rounded-lg bg-gray-800 p-8 shadow-xl">
-          <h2 class="mb-6 text-center text-3xl font-bold">
+        <div class="mt-8 rounded-lg bg-gray-800 p-8 shadow-xl">
+          <h2 class="mb-6 text-center text-2xl font-bold xl:text-4xl">
             Moje Podejście do Kompozycji Muzyki
           </h2>
           <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -70,7 +71,7 @@
                 <li>
                   Współpraca z innymi muzykami w celu wzbogacenia brzmienia
                 </li>
-                <li>Ciagłe doskonalenie i poszukiwanie inspiracji</li>
+                <li>Ciągłe doskonalenie i poszukiwanie inspiracji</li>
               </ul>
             </div>
             <div
@@ -92,7 +93,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </section>
   </Layout>
 </template>
 

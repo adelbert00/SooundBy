@@ -2,43 +2,45 @@
   <Layout
     class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
   >
-    <div class="mx-auto max-w-7xl">
+    <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center">
-        <h1 class="text-5xl font-bold">Kontakt</h1>
-        <p class="mt-4 text-xl">
+        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Kontakt</h1>
+        <p class="text-lg md:text-xl">
           Masz pytania lub chcesz współpracować? Skontaktuj się za pomocą
           poniższego formularza lub za pośrednictwem danych kontaktowych.
         </p>
       </div>
 
-      <div class="mt-20 grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-          <h2 class="mb-6 text-2xl font-bold">Wyślij wiadomość</h2>
+      <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div
+          class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+        >
+          <h2 class="mb-6 text-xl font-bold md:text-2xl">Wyślij wiadomość</h2>
           <Form @submit="handleSubmit" class="space-y-6">
-            <div v-for="field in fields" :key="field.model">
-              <FormItem
-                :invalid="Boolean(errors[field.model])"
-                class="space-y-2"
-              >
-                <Label :for="field.model">{{ field.placeholder }}</Label>
-                <Input
-                  v-model="formData[field.model]"
-                  :type="field.type"
-                  :id="field.model"
-                  required
-                />
-                <span v-if="errors[field.model]" class="text-sm text-red-500">
-                  {{ errors[field.model] }}
-                </span>
-              </FormItem>
-            </div>
+            <FormItem
+              v-for="field in fields"
+              :key="field.model"
+              :invalid="Boolean(errors[field.model])"
+              class="space-y-2"
+            >
+              <Label :for="field.model">{{ field.placeholder }}</Label>
+              <Input
+                v-model="formData[field.model]"
+                :type="field.type"
+                :id="field.model"
+                :name="field.model"
+              />
+              <span v-if="errors[field.model]" class="text-sm text-red-500">
+                {{ errors[field.model] }}
+              </span>
+            </FormItem>
             <FormItem :invalid="errors.message" class="space-y-2">
               <Label for="message">Wiadomość</Label>
               <Textarea
                 v-model="formData.message"
                 id="message"
+                name="message"
                 rows="6"
-                required
               />
               <span v-if="errors.message" class="text-sm text-red-500">
                 {{ errors.message }}
@@ -54,80 +56,56 @@
         </div>
 
         <div class="space-y-8">
-          <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-            <h2 class="mb-6 text-2xl font-bold">Informacje kontaktowe</h2>
+          <div
+            class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+          >
+            <h2 class="mb-6 text-xl font-bold md:text-2xl">
+              Informacje kontaktowe
+            </h2>
             <div class="space-y-4">
-              <div class="flex items-center">
+              <div
+                class="flex items-center transition duration-300 hover:text-purple-300"
+              >
                 <Phone class="mr-4 h-6 w-6 text-purple-400" />
                 <span>+48 577 613 812</span>
               </div>
-              <div class="flex items-center">
+              <div
+                class="flex items-center transition duration-300 hover:text-purple-300"
+              >
                 <Mail class="mr-4 h-6 w-6 text-purple-400" />
                 <span>contact@sounddesign.com</span>
               </div>
-              <div class="flex items-center">
+              <div
+                class="flex items-center transition duration-300 hover:text-purple-300"
+              >
                 <MapPin class="mr-4 h-6 w-6 text-purple-400" />
                 <span>Warszawa, Polska</span>
               </div>
             </div>
           </div>
 
-          <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-            <h2 class="mb-6 text-2xl font-bold">
+          <div
+            class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+          >
+            <h2 class="mb-6 text-xl font-bold md:text-2xl">
               Dlaczego warto współpracować ze mną?
             </h2>
             <ul class="space-y-4">
               <li class="flex items-center">
                 <div class="mr-4 rounded-full bg-purple-500 p-2">
-                  <svg
-                    class="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="{2}"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <Check class="h-6 w-6 text-white" />
                 </div>
                 <span>Ponad 10 lat doświadczenia w produkcji audio</span>
               </li>
               <li class="flex items-center">
                 <div class="mr-4 rounded-full bg-purple-500 p-2">
-                  <svg
-                    class="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="{2}"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <Check class="h-6 w-6 text-white" />
                 </div>
                 <span>Różnorodne portfolio w różnych branżach</span>
               </li>
               <li class="flex items-center">
                 <div class="mr-4 rounded-full bg-purple-500 p-2">
-                  <svg
-                    class="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="{2}"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <Check class="h-6 w-6 text-white" />
                 </div>
                 <span>
                   Pasja do tworzenia unikalnych doświadczeń dźwiękowych
@@ -139,7 +117,7 @@
       </div>
 
       <Modal :message="modalMessage" v-model:isVisible="isModalVisible" />
-    </div>
+    </section>
   </Layout>
 </template>
 
@@ -147,7 +125,7 @@
 import { ref } from 'vue';
 import emailjs from '@emailjs/browser';
 import Modal from '../components/Modal.vue';
-import { Phone, Mail, MapPin } from 'lucide-vue-next';
+import { Phone, Mail, MapPin, Check } from 'lucide-vue-next';
 import Layout from '../Layouts/Layout.vue';
 import { Form } from 'vee-validate';
 import FormItem from '@/components/ui/form/FormItem.vue';

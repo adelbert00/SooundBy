@@ -1,10 +1,12 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <TopBar class="pb-40" />
+    <TopBar class="pb-20" />
     <main class="flex-grow">
-      <slot />
+      <div class="mx-auto w-full max-w-7xl">
+        <slot />
+      </div>
     </main>
-    <Footer class="pt-40" />
+    <Footer class="pt-20" />
   </div>
 </template>
 
@@ -12,5 +14,3 @@
 import Footer from '@/Screens/Footer.vue';
 import TopBar from '../Screens/TopBar.vue';
 </script>
-
-<style scoped></style>

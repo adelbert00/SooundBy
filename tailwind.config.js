@@ -102,9 +102,7 @@ export default {
         '2xl': '8rem',
       },
       fontFamily: {
-        custom: ['New Amsterdam', 'sans-serif'],
-        sans: ['Montserrat', 'sans-serif'],
-        'alte-haas-grotesk': ['AlteHaasGrotesk', 'sans-serif'],
+        sans: ['Lato', 'sans-serif'],
       },
       boxShadow: {
         sm: '0px 1px 2px 0px var(--gray-300, #858585)',
