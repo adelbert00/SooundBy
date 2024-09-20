@@ -10,4 +10,8 @@ export default defineConfig({
       refresh: true,
     }),
   ],
+  server: {
+    port: process.env.PORT || 3000, // Use the PORT environment variable provided by Render
+    host: '0.0.0.0', // Listen on all interfaces to allow external access
+  },
 });
