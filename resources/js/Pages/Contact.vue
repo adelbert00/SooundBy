@@ -1,8 +1,8 @@
 <template>
   <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
-      <div class="text-center">
-        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+      <div class="text-center" data-aos="fade-up">
+        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
           Kontakt
         </h1>
         <p class="font-lato text-lg font-normal md:text-xl">
@@ -11,11 +11,14 @@
         </p>
       </div>
 
-      <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
+      <div
+        class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2"
+        data-aos="fade-up"
+      >
         <div
           class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
         >
-          <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
+          <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
             Wyślij wiadomość
           </h2>
           <Form @submit="handleSubmit" class="space-y-6">
@@ -61,11 +64,11 @@
           </Form>
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-8" data-aos="fade-left">
           <div
             class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
           >
-            <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
+            <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
               Informacje kontaktowe
             </h2>
             <div class="space-y-4">
@@ -92,8 +95,9 @@
 
           <div
             class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
+            data-aos="zoom-in"
           >
-            <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
+            <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
               Dlaczego warto współpracować ze mną?
             </h2>
             <ul class="space-y-4">
@@ -125,7 +129,9 @@
           </div>
         </div>
       </div>
-      <Testimonials />
+
+      <Testimonials data-aos="fade-up" />
+
       <Modal :message="modalMessage" v-model:isVisible="isModalVisible" />
     </section>
   </Layout>
@@ -227,8 +233,7 @@ const handleSubmit = async () => {
       'rQSq3naNJRIg6BL5-'
     );
 
-    modalMessage.value =
-      'Dziękujemy za przesłanie wiadomości! Skontaktujemy się z Tobą wkrótce.';
+    modalMessage.value = 'Dziękujemy za przesłanie wiadomości!';
   } catch (error) {
     console.error('Error sending email:', error);
     modalMessage.value =

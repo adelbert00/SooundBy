@@ -19,13 +19,13 @@
           class="mb-4 h-32 w-full rounded-md object-cover"
           loading="lazy"
         />
-        <h2 class="font-playfair mb-2 text-xl font-semibold">
+        <h2 class="mb-2 font-playfair text-xl font-semibold">
           {{ product.name }}
         </h2>
-        <p class="font-lato mb-4 text-lg text-gray-300">
+        <p class="mb-4 font-lato text-lg text-gray-300">
           {{ product.description }}
         </p>
-        <p class="font-playfair mb-4 text-lg font-bold">
+        <p class="mb-4 font-playfair text-lg font-bold">
           {{ product.price }} PLN
         </p>
         <Button

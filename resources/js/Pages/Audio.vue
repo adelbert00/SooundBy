@@ -1,8 +1,8 @@
 <template>
   <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
-      <div class="text-center">
-        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+      <div class="text-center" data-aos="fade-up">
+        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
           Sekcje Audio
         </h1>
         <p class="font-lato text-lg font-normal md:text-xl">
@@ -14,16 +14,18 @@
       </div>
 
       <div
-        class="mt-12 grid grid-cols-1 gap-12 rounded-3xl md:grid-cols-2 xl:p-8"
+        class="mt-12 grid grid-cols-1 gap-12 rounded-3xl p-1 md:grid-cols-2 xl:p-8"
+        data-aos="fade-up"
       >
         <div
           v-for="(track, index) in audioCategories"
           :key="index"
           class="overflow-hidden rounded-3xl border-4 border-gray-200 bg-transparent p-8 shadow-lg transition duration-300 hover:scale-105"
           :class="track.color"
+          data-aos="zoom-in"
         >
           <h2
-            class="font-playfair mb-6 text-xl font-bold text-white md:text-2xl"
+            class="mb-6 font-playfair text-xl font-bold text-white md:text-2xl"
           >
             {{ track.title }}
           </h2>
@@ -38,27 +40,32 @@
         </div>
       </div>
 
-      <section class="relative mt-12 overflow-hidden rounded-3xl">
+      <section
+        class="relative mt-12 overflow-hidden rounded-3xl"
+        data-aos="fade-up"
+      >
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-white via-gray-800 to-black"
         ></div>
         <div class="mt-8 rounded-lg p-8 shadow-xl">
           <h2
-            class="font-playfair mb-8 text-center text-2xl font-bold xl:text-4xl"
+            class="mb-8 text-center font-playfair text-2xl font-bold xl:text-4xl"
+            data-aos="fade-right"
           >
             Dlaczego Jakość Dźwięku Jest Ważna
           </h2>
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2" data-aos="fade-up">
             <div
               class="rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
+              data-aos="zoom-in"
             >
               <h3
-                class="font-playfair mb-4 text-xl font-semibold text-gray-200 md:text-2xl"
+                class="mb-4 font-playfair text-xl font-semibold text-gray-200 md:text-2xl"
               >
                 Korzyści z Wysokiej Jakości Dźwięku
               </h3>
               <ul
-                class="font-lato list-inside list-disc space-y-2 text-lg text-gray-300"
+                class="list-inside list-disc space-y-2 font-lato text-lg text-gray-300"
               >
                 <li>Zwiększa immersję i zaangażowanie</li>
                 <li>Buduje atmosferę i wzmacnia emocje</li>
@@ -69,14 +76,15 @@
             </div>
             <div
               class="rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
+              data-aos="zoom-in"
             >
               <h3
-                class="font-playfair mb-4 text-xl font-semibold text-gray-200 md:text-2xl"
+                class="mb-4 font-playfair text-xl font-semibold text-gray-200 md:text-2xl"
               >
                 Moje Podejście do Jakości Dźwięku
               </h3>
               <ul
-                class="font-lato list-inside list-disc space-y-2 text-lg text-gray-300"
+                class="list-inside list-disc space-y-2 font-lato text-lg text-gray-300"
               >
                 <li>Wykorzystanie najwyższej jakości sprzętu nagrywającego</li>
                 <li>
@@ -94,7 +102,7 @@
           </div>
         </div>
       </section>
-      <Store />
+      <Store data-aos="fade-up" />
     </section>
   </Layout>
 </template>

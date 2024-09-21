@@ -20,7 +20,7 @@
           <div class="flex w-full max-w-md items-center md:w-auto">
             <Input
               type="email"
-              class="font-lato w-full rounded bg-transparent text-white placeholder-gray-500 md:w-auto"
+              class="w-full rounded bg-transparent font-playfair font-bold text-white placeholder:text-white focus:placeholder:text-transparent md:w-auto"
               placeholder="Adres e-mail"
               v-model="formData.email"
               name="email"
@@ -100,7 +100,7 @@
       </div>
     </section>
 
-    <div class="font-lato p-4 text-center">
+    <div class="p-4 text-center font-lato">
       © 2024 Copyright:
       <a
         href="https://tw-elements.com/"

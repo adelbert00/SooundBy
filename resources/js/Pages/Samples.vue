@@ -1,8 +1,8 @@
 <template>
   <Layout class="grain-effect min-h-screen text-white">
-    <section class="mx-auto w-full max-w-7xl px-4">
-      <div class="text-center">
-        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+    <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
+      <div class="text-center" data-aos="fade-up">
+        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
           Sample Packi
         </h1>
         <p class="font-lato text-lg font-normal md:text-xl">
@@ -11,11 +11,15 @@
         </p>
       </div>
 
-      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+      <div
+        class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4"
+        data-aos="fade-up"
+      >
         <div
           v-for="(pack, index) in samplePacks"
           :key="index"
           class="transform overflow-hidden rounded-lg bg-transparent shadow-lg transition-transform hover:scale-105"
+          data-aos="zoom-in"
         >
           <img
             :src="pack.imageSrc"
@@ -24,11 +28,11 @@
             loading="lazy"
           />
           <div class="p-6">
-            <h2 class="font-playfair mb-2 text-xl font-semibold">
+            <h2 class="mb-2 font-playfair text-xl font-semibold">
               {{ pack.name }}
             </h2>
             <ul
-              class="font-lato mb-4 list-inside list-disc text-lg font-normal"
+              class="mb-4 list-inside list-disc font-lato text-lg font-normal"
             >
               <li v-for="(item, i) in pack.contents" :key="i">{{ item }}</li>
             </ul>
@@ -43,22 +47,29 @@
         </div>
       </div>
 
-      <section class="relative mt-20 overflow-hidden rounded-3xl">
+      <section
+        class="relative mt-20 overflow-hidden rounded-3xl"
+        data-aos="fade-up"
+      >
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-white via-gray-800 to-black"
         ></div>
         <h2
-          class="font-playfair mt-10 text-center text-2xl font-bold md:text-3xl"
+          class="mt-10 text-center font-playfair text-2xl font-bold md:text-3xl"
+          data-aos="fade-right"
         >
           Jak korzystać z naszych sampli?
         </h2>
         <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div class="rounded-lg bg-transparent p-6 shadow-lg">
-            <h3 class="font-playfair mb-4 text-2xl font-semibold text-gray-200">
+          <div
+            class="rounded-lg bg-transparent p-6 shadow-lg"
+            data-aos="fade-left"
+          >
+            <h3 class="mb-4 font-playfair text-2xl font-semibold text-gray-200">
               Wskazówki
             </h3>
             <ul
-              class="font-lato list-inside list-disc space-y-2 text-lg text-gray-200"
+              class="list-inside list-disc space-y-2 font-lato text-lg text-gray-200"
             >
               <li>
                 Eksperymentuj z warstwowaniem dźwięków dla uzyskania bogatszych
@@ -76,12 +87,15 @@
             </ul>
           </div>
 
-          <div class="rounded-lg bg-transparent p-6 shadow-lg">
-            <h3 class="font-playfair mb-4 text-2xl font-semibold text-gray-200">
+          <div
+            class="rounded-lg bg-transparent p-6 shadow-lg"
+            data-aos="fade-left"
+          >
+            <h3 class="mb-4 font-playfair text-2xl font-semibold text-gray-200">
               Proces twórczy
             </h3>
             <ol
-              class="font-lato list-inside list-decimal space-y-2 text-lg text-gray-200"
+              class="list-inside list-decimal space-y-2 font-lato text-lg text-gray-200"
             >
               <li>Wybierz odpowiedni sample pack do swojego projektu.</li>
               <li>
@@ -101,39 +115,50 @@
         </div>
       </section>
 
-      <section class="relative mt-20 rounded-3xl">
+      <section class="relative mt-20 rounded-3xl" data-aos="fade-up">
         <h2
-          class="font-playfair mt-10 text-center text-2xl font-bold md:text-3xl"
+          class="mt-10 text-center font-playfair text-2xl font-bold md:text-3xl"
+          data-aos="fade-right"
         >
           Kto korzystał z naszych sampli?
         </h2>
-        <p class="font-lato mt-4 text-center text-lg font-normal text-gray-200">
+        <p
+          class="mt-4 text-center font-lato text-lg font-normal text-gray-200"
+          data-aos="fade-up"
+        >
           Nasze sample znalazły się w produkcjach znanych artystów na całym
           świecie!
         </p>
-        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div
+          class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3"
+          data-aos="fade-up"
+        >
           <div
             v-for="(artist, index) in popularArtists"
             :key="index"
             class="transform rounded-lg bg-transparent p-6 text-center shadow-md transition-transform hover:scale-105"
+            data-aos="zoom-in"
           >
             <img
               :src="artist.imageSrc"
               class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-lg"
               loading="lazy"
             />
-            <h3 class="font-playfair mb-2 text-2xl font-semibold text-white">
+            <h3 class="mb-2 font-playfair text-2xl font-semibold text-white">
               {{ artist.name }}
             </h3>
-            <p class="font-lato mb-4 text-white">
+            <p class="mb-4 font-lato text-white">
               {{ artist.description }}
             </p>
-            <ul class="font-lato list-inside list-disc space-y-2 text-white">
+            <ul class="list-inside list-disc space-y-2 font-lato text-white">
               <li v-for="(track, i) in artist.tracks" :key="i">{{ track }}</li>
             </ul>
           </div>
         </div>
-        <p class="font-lato mt-10 text-center text-base italic text-gray-200">
+        <p
+          class="mt-10 text-center font-lato text-base italic text-gray-200"
+          data-aos="fade-up"
+        >
           Zachęcamy do korzystania z naszych darmowych sampli i dołącz do grona
           zadowolonych artystów!
         </p>

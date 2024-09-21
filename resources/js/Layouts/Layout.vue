@@ -1,18 +1,19 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <TopBar class="pb-20 md:pb-60" />
+    <TopBar class="" />
 
     <main class="flex-grow">
       <div class="mx-auto w-full max-w-7xl">
         <slot />
       </div>
     </main>
-    <Footer class="pt-20" />
+    <Footer data-aos="fade-down" class="pt-20 md:pt-40" />
 
     <Button
+      data-aos="fade-down"
       v-if="showScrollButton"
       @click="scrollToTop"
-      class="font-playfair fixed bottom-4 right-4 z-50 h-12 w-12 rounded-xl border-2 text-lg font-bold text-white transition-all hover:scale-125"
+      class="fixed bottom-4 right-4 z-50 h-12 w-12 rounded-xl border-2 font-playfair text-lg font-bold text-white transition-all hover:scale-125"
     >
       TOP
     </Button>

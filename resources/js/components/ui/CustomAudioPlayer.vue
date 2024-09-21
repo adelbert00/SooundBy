@@ -2,7 +2,7 @@
   <div class="mb-8 flex items-center justify-center space-x-4">
     <Button
       @click="togglePlay"
-      class="w-20 rounded-full bg-gray-300 font-bold text-white transition hover:scale-125"
+      class="w-10 rounded-full bg-gray-300 font-bold text-white transition hover:scale-125 xl:w-20"
     >
       <component :is="isPlaying ? Pause : Play" :size="30" />
     </Button>

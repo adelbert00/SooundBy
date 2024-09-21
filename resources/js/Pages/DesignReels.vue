@@ -1,8 +1,8 @@
 <template>
   <Layout class="grain-effect min-h-screen text-white">
-    <section class="mx-auto w-full max-w-7xl px-4">
-      <div class="text-center">
-        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+    <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
+      <div class="text-center" data-aos="fade-up">
+        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
           Reel
         </h1>
         <p class="font-lato text-lg font-normal md:text-xl">
@@ -11,22 +11,24 @@
         </p>
       </div>
 
-      <Accordion type="multiple" class="mt-16">
+      <Accordion type="multiple" class="mt-16" data-aos="fade-up">
         <AccordionItem
           v-for="(reel, index) in reels"
           :key="index"
           :value="`item-${index}`"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <AccordionTrigger>
             <div class="flex items-center justify-between p-4">
               <div class="min-w-0 flex-1 pr-4">
                 <h3
-                  class="font-playfair text-left text-lg font-semibold md:text-xl"
+                  class="text-left font-playfair text-lg font-semibold md:text-xl"
                 >
                   {{ reel.title }}
                 </h3>
                 <p
-                  class="font-lato truncate text-left font-normal text-gray-300"
+                  class="truncate text-left font-lato font-normal text-gray-300"
                 >
                   {{ reel.subtitle }}
                 </p>
@@ -41,32 +43,41 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 class="h-64 w-full md:h-96"
+                data-aos="fade-up"
               ></iframe>
             </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
 
-      <section class="relative mt-20 overflow-hidden rounded-3xl">
+      <section
+        class="relative mt-20 overflow-hidden rounded-3xl"
+        data-aos="fade-up"
+      >
         <div
           class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-white via-gray-800 to-black"
         ></div>
         <div class="rounded-lg bg-transparent p-8 shadow-lg">
           <h2
-            class="font-playfair mb-10 text-center text-2xl font-bold md:text-3xl"
+            class="mb-10 text-center font-playfair text-2xl font-bold md:text-3xl"
+            data-aos="fade-right"
           >
             Proces twórczy
           </h2>
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+            data-aos="fade-up"
+          >
             <div
               v-for="(item, index) in processSteps"
               :key="index"
               class="transform rounded-lg p-6 shadow-md transition-transform hover:scale-105 hover:shadow-lg"
+              data-aos="zoom-in"
             >
-              <div class="font-playfair mb-2 text-2xl font-bold text-gray-200">
+              <div class="mb-2 font-playfair text-2xl font-bold text-gray-200">
                 {{ item.step }}
               </div>
-              <h3 class="font-playfair mb-2 text-xl font-semibold text-white">
+              <h3 class="mb-2 font-playfair text-xl font-semibold text-white">
                 {{ item.title }}
               </h3>
               <p class="font-lato text-base font-normal text-gray-300">

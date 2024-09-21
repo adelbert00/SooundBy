@@ -6,12 +6,12 @@
     <div
       class="w-full max-w-md rounded-lg bg-white p-8 text-center text-black shadow-lg"
     >
-      <h1 class="font-playfair mb-4 text-xl font-bold">{{ message }}</h1>
+      <h1 class="mb-10 font-playfair text-xl font-bold">{{ message }}</h1>
 
       <Button
         variant="outline"
         @click="closeModal"
-        class="rounded-full px-4 py-2 text-black shadow-md"
+        class="rounded-full px-4 py-2 font-playfair text-base font-bold text-black shadow-md"
       >
         Zamknij
       </Button>
