@@ -1,1 +1,0 @@
-node_modules vendor .env .git docker-compose.yml README.md npm-debug.log yarn-error.log .vscode .idea public/storage storage/*.key
