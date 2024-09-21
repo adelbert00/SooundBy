@@ -6,11 +6,12 @@
     <div
       class="w-full max-w-md rounded-lg bg-white p-8 text-center text-black shadow-lg"
     >
-      <h1 class="mb-4 text-xl font-bold">{{ message }}</h1>
+      <h1 class="font-playfair mb-4 text-xl font-bold">{{ message }}</h1>
 
       <Button
+        variant="outline"
         @click="closeModal"
-        class="rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600"
+        class="rounded-full px-4 py-2 text-black shadow-md"
       >
         Zamknij
       </Button>
@@ -39,5 +40,3 @@ const closeModal = () => {
   emit('update:isVisible', false);
 };
 </script>
-
-<style scoped></style>

@@ -1,7 +1,7 @@
 <template>
   <footer class="relative bg-transparent text-white">
     <div
-      class="absolute left-1/2 w-[360px] -translate-x-1/2 justify-center border-b-2 border-black md:w-[720px] xl:w-[1280px]"
+      class="absolute left-1/2 w-[360px] -translate-x-1/2 justify-center border-b-2 border-white md:w-[720px] xl:w-[1280px]"
     ></div>
 
     <section
@@ -12,7 +12,7 @@
           class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0"
         >
           <div class="text-center md:text-left">
-            <p class="text-lg font-semibold">
+            <p class="font-playfair text-lg font-semibold">
               <strong>Zapisz się do naszego newslettera</strong>
             </p>
           </div>
@@ -20,7 +20,7 @@
           <div class="flex w-full max-w-md items-center md:w-auto">
             <Input
               type="email"
-              class="text- w-full rounded bg-transparent text-white placeholder-gray-500 md:w-auto"
+              class="font-lato w-full rounded bg-transparent text-white placeholder-gray-500 md:w-auto"
               placeholder="Adres e-mail"
               v-model="formData.email"
               name="email"
@@ -28,7 +28,7 @@
             />
             <Button
               type="submit"
-              class="hover:bg-primary-dark ml-2 rounded-lg bg-primary px-4 py-2 text-lg font-bold uppercase"
+              class="hover:bg-primary-dark ml-2 rounded-lg bg-gray-300 px-4 py-2 text-lg font-bold shadow-md"
               :disabled="isLoading"
               aria-label="Subscribe"
             >
@@ -57,7 +57,7 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-          class="transform text-purple-400 transition-colors duration-300 hover:scale-110 hover:text-purple-300"
+          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
         >
           <Facebook class="h-6 w-6" />
         </a>
@@ -66,7 +66,7 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
-          class="transform text-purple-400 transition-colors duration-300 hover:scale-110 hover:text-purple-300"
+          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
         >
           <Twitter class="h-6 w-6" />
         </a>
@@ -75,7 +75,7 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          class="transform text-purple-400 transition-colors duration-300 hover:scale-110 hover:text-purple-300"
+          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
         >
           <Instagram class="h-6 w-6" />
         </a>
@@ -84,7 +84,7 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          class="transform text-purple-400 transition-colors duration-300 hover:scale-110 hover:text-purple-300"
+          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
         >
           <Linkedin class="h-6 w-6" />
         </a>
@@ -93,18 +93,18 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          class="transform text-purple-400 transition-colors duration-300 hover:scale-110 hover:text-purple-300"
+          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
         >
           <Github class="h-6 w-6" />
         </a>
       </div>
     </section>
 
-    <div class="bg-black/5 p-4 text-center">
+    <div class="font-lato p-4 text-center">
       © 2024 Copyright:
       <a
         href="https://tw-elements.com/"
-        class="text-purple-400 hover:text-purple-300"
+        class="text-gray-300"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -181,9 +181,3 @@ const handleSubmit = async () => {
   }
 };
 </script>
-
-<style scoped>
-.text-red-500 {
-  color: red;
-}
-</style>

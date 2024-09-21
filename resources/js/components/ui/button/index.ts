@@ -3,21 +3,20 @@ import { type VariantProps, cva } from 'class-variance-authority';
 export { default as Button } from './Button.vue';
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-background-900 dark:focus-visible:ring-primary-400',
   {
     variants: {
       variant: {
         default:
-          ' hover:text-accent-foreground focus-visible:ring-ring bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md  px-8 text-xl font-normal  transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
+          'bg-primary-500 text-white hover:bg-primary-600 transition duration-300 hover:scale-105 focus-visible:ring-primary-500',
         destructive:
-          ' hover:text-accent-foreground focus-visible:ring-ring bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md px-8 text-xl font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
-        outline:
-          ' bg-white hover:bg-slate-100 hover:text-slate-900  dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
+          'bg-red-600 text-white hover:bg-red-700 shadow-lg transition duration-300 hover:scale-105 focus-visible:ring-ring',
+        outline: 'bg-white ',
         secondary:
-          'bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80',
+          'bg-secondary-600 text-white hover:bg-secondary-700 shadow-lg transition duration-300 hover:scale-105',
         ghost:
-          'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
-        link: 'inline-block rounded-full bg-purple-600  text-sm font-semibold text-white  hover:bg-purple-700',
+          'bg-transparent text-white hover:bg-background-800 hover:text-white dark:hover:bg-background-900',
+        link: 'inline-block rounded-full bg-accent-500 text-sm font-semibold text-white hover:bg-accent-600',
       },
       size: {
         default: 'h-10 px-4 py-2',

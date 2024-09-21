@@ -1,11 +1,11 @@
 <template>
-  <Layout
-    class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
-  >
+  <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-full max-w-7xl px-4">
       <div class="text-center">
-        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Reel</h1>
-        <p class="text-lg md:text-xl">
+        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+          Reel
+        </h1>
+        <p class="font-lato text-lg font-normal md:text-xl">
           Zobacz moje najlepsze prace w dziedzinie sound designu i kompozycji
           muzycznej.
         </p>
@@ -20,10 +20,14 @@
           <AccordionTrigger>
             <div class="flex items-center justify-between p-4">
               <div class="min-w-0 flex-1 pr-4">
-                <h3 class="text-left text-lg font-semibold md:text-xl">
+                <h3
+                  class="font-playfair text-left text-lg font-semibold md:text-xl"
+                >
                   {{ reel.title }}
                 </h3>
-                <p class="truncate text-left text-gray-300">
+                <p
+                  class="font-lato truncate text-left font-normal text-gray-300"
+                >
                   {{ reel.subtitle }}
                 </p>
               </div>
@@ -45,25 +49,29 @@
 
       <section class="relative mt-20 overflow-hidden rounded-3xl">
         <div
-          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-white via-gray-800 to-black"
         ></div>
-        <div class="rounded-lg bg-gray-800 p-8 shadow-xl">
-          <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl">
+        <div class="rounded-lg bg-transparent p-8 shadow-lg">
+          <h2
+            class="font-playfair mb-10 text-center text-2xl font-bold md:text-3xl"
+          >
             Proces twórczy
           </h2>
           <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div
               v-for="(item, index) in processSteps"
               :key="index"
-              class="transform rounded-lg bg-gradient-to-br from-purple-900 to-indigo-900 p-6 shadow-md transition-transform hover:scale-105 hover:shadow-xl"
+              class="transform rounded-lg p-6 shadow-md transition-transform hover:scale-105 hover:shadow-lg"
             >
-              <div class="mb-2 text-2xl font-bold text-purple-400">
+              <div class="font-playfair mb-2 text-2xl font-bold text-gray-200">
                 {{ item.step }}
               </div>
-              <h3 class="mb-2 text-xl font-semibold text-white">
+              <h3 class="font-playfair mb-2 text-xl font-semibold text-white">
                 {{ item.title }}
               </h3>
-              <p class="text-gray-300">{{ item.description }}</p>
+              <p class="font-lato font-normal text-gray-300">
+                {{ item.description }}
+              </p>
             </div>
           </div>
         </div>

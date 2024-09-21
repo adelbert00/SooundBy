@@ -6,6 +6,31 @@
 
 @layer base {
   body {
-    @apply overflow-x-hidden font-serif;
+    @apply overflow-x-hidden;
+  }
+
+  /* Efekt grain na każdej stronie */
+  .grain-effect {
+    position: relative;
+    background: url('/resources/js/assets/photos/background.jpg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .grain-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/resources/js/assets/photos/grain.jpg');
+    opacity: 0.1;
+    z-index: 2;
+    pointer-events: none;
+    mix-blend-mode: multiply;
   }
 }

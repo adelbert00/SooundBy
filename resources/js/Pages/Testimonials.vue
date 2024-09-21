@@ -2,18 +2,20 @@
   <section
     class="mx-auto w-full max-w-7xl bg-transparent px-4 py-12 text-white"
   >
-    <h2 class="mb-8 text-center text-2xl font-bold md:text-3xl">
+    <h2 class="font-playfair mb-8 text-center text-2xl font-bold md:text-3xl">
       Opinie Klientów
     </h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div
         v-for="(testimonial, index) in testimonials"
         :key="index"
-        class="rounded-lg bg-gray-800 p-6 shadow-lg"
+        class="rounded-lg p-6 shadow-lg transition-transform hover:scale-105"
       >
-        <p class="mb-4 text-gray-300">"{{ testimonial.quote }}"</p>
-        <h3 class="text-xl font-semibold">{{ testimonial.name }}</h3>
-        <p class="text-gray-400">{{ testimonial.position }}</p>
+        <p class="font-lato mb-4 text-gray-300">"{{ testimonial.quote }}"</p>
+        <h3 class="font-playfair text-xl font-semibold">
+          {{ testimonial.name }}
+        </h3>
+        <p class="font-lato text-gray-400">{{ testimonial.position }}</p>
       </div>
     </div>
   </section>

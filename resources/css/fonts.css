@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'Lato';
@@ -13,5 +13,21 @@
   font-style: bold;
   font-weight: 700;
   src: url('https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v22/nuFvD-vYSZviVYUb_rj3ij__anPXPT5GgA.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: bold;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v22/nuFvD-vYSZviVYUb_rj3ij__anPXPT5KmzQ.ttf')
     format('truetype');
 }

@@ -1,11 +1,11 @@
 <template>
-  <Layout
-    class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
-  >
+  <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-full max-w-7xl px-4">
       <div class="text-center">
-        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Sample Packi</h1>
-        <p class="text-lg md:text-xl">
+        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+          Sample Packi
+        </h1>
+        <p class="font-lato text-lg font-normal md:text-xl">
           Odkryj moją kolekcję starannie przygotowanych sample packów, idealnych
           do różnorodnych projektów audio.
         </p>
@@ -15,7 +15,7 @@
         <div
           v-for="(pack, index) in samplePacks"
           :key="index"
-          class="transform overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-transform hover:scale-105"
+          class="transform overflow-hidden rounded-lg bg-transparent shadow-lg transition-transform hover:scale-105"
         >
           <img
             :src="pack.imageSrc"
@@ -24,8 +24,12 @@
             loading="lazy"
           />
           <div class="p-6">
-            <h2 class="mb-2 text-lg font-semibold">{{ pack.name }}</h2>
-            <ul class="mb-4 list-inside list-disc">
+            <h2 class="font-playfair mb-2 text-lg font-semibold">
+              {{ pack.name }}
+            </h2>
+            <ul
+              class="font-lato mb-4 list-inside list-disc text-base font-normal"
+            >
               <li v-for="(item, i) in pack.contents" :key="i">{{ item }}</li>
             </ul>
             <Button
@@ -41,17 +45,21 @@
 
       <section class="relative mt-20 overflow-hidden rounded-3xl">
         <div
-          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-white via-gray-800 to-black"
         ></div>
-        <h2 class="mt-10 text-center text-2xl font-bold md:text-3xl">
+        <h2
+          class="font-playfair mt-10 text-center text-2xl font-bold md:text-3xl"
+        >
           Jak korzystać z naszych sampli?
         </h2>
         <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div class="rounded-lg bg-gray-800 p-6">
-            <h3 class="mb-4 text-xl font-semibold text-purple-400">
+          <div class="rounded-lg bg-transparent p-6 shadow-lg">
+            <h3 class="font-playfair mb-4 text-xl font-semibold text-gray-200">
               Wskazówki
             </h3>
-            <ul class="list-inside list-disc space-y-2 text-base text-gray-300">
+            <ul
+              class="font-lato list-inside list-disc space-y-2 text-base text-gray-200"
+            >
               <li>
                 Eksperymentuj z warstwowaniem dźwięków dla uzyskania bogatszych
                 tekstur.
@@ -68,12 +76,12 @@
             </ul>
           </div>
 
-          <div class="rounded-lg bg-gray-800 p-6">
-            <h3 class="mb-4 text-xl font-semibold text-purple-400">
+          <div class="rounded-lg bg-transparent p-6 shadow-lg">
+            <h3 class="font-playfair mb-4 text-xl font-semibold text-gray-200">
               Proces twórczy
             </h3>
             <ol
-              class="list-inside list-decimal space-y-2 text-base text-gray-300"
+              class="font-lato list-inside list-decimal space-y-2 text-base text-gray-200"
             >
               <li>Wybierz odpowiedni sample pack do swojego projektu.</li>
               <li>
@@ -95,36 +103,38 @@
 
       <section class="relative mt-20 overflow-hidden rounded-3xl">
         <div
-          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-gray-800 via-black to-white"
         ></div>
-        <h2 class="mt-10 text-center text-2xl font-bold md:text-3xl">
+        <h2
+          class="font-playfair mt-10 text-center text-2xl font-bold md:text-3xl"
+        >
           Kto korzystał z naszych sampli?
         </h2>
-        <p class="mt-4 text-center text-lg text-purple-300">
+        <p class="font-lato mt-4 text-center text-lg font-normal text-gray-200">
           Nasze sample znalazły się w produkcjach znanych artystów na całym
           świecie!
         </p>
-        <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div
             v-for="(artist, index) in popularArtists"
             :key="index"
-            class="transform rounded-lg bg-gray-800 p-6 text-center transition-transform hover:scale-105"
+            class="transform rounded-lg bg-transparent p-6 text-center shadow-md transition-transform hover:scale-105"
           >
             <img
               :src="artist.imageSrc"
-              class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-md"
+              class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-lg"
               loading="lazy"
             />
-            <h3 class="mb-2 text-xl font-semibold text-purple-400">
+            <h3 class="font-playfair mb-2 text-xl font-semibold text-gray-200">
               {{ artist.name }}
             </h3>
-            <p class="mb-4 text-gray-300">{{ artist.description }}</p>
-            <ul class="list-inside list-disc space-y-2 text-gray-300">
+            <p class="font-lato mb-4 text-gray-200">{{ artist.description }}</p>
+            <ul class="font-lato list-inside list-disc space-y-2 text-gray-200">
               <li v-for="(track, i) in artist.tracks" :key="i">{{ track }}</li>
             </ul>
           </div>
         </div>
-        <p class="mt-10 text-center text-sm italic text-purple-400">
+        <p class="font-lato mt-10 text-center text-sm italic text-gray-200">
           Zachęcamy do korzystania z naszych darmowych sampli i dołącz do grona
           zadowolonych artystów!
         </p>
@@ -134,7 +144,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import Layout from '../Layouts/Layout.vue';
 import Button from '../components/ui/button/Button.vue';
 import { samplePacks } from '@/constants/samplePacks';

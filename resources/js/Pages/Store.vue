@@ -1,8 +1,8 @@
 <template>
   <section class="mx-auto w-full max-w-7xl px-4 pt-10">
     <div class="text-center">
-      <h1 class="text-2xl font-bold md:text-3xl">Sklep</h1>
-      <p class="text-lg md:text-xl">
+      <h1 class="font-playfair text-2xl font-bold md:text-3xl">Sklep</h1>
+      <p class="font-lato text-lg font-normal md:text-xl">
         Kupuj moje sample packi i usługi audio bezpośrednio tutaj.
       </p>
     </div>
@@ -11,7 +11,7 @@
       <div
         v-for="(product, index) in products"
         :key="index"
-        class="rounded-lg bg-gray-800 p-6 shadow-lg"
+        class="rounded-lg p-6 shadow-lg transition-transform hover:scale-105"
       >
         <img
           :src="product.image"
@@ -19,9 +19,13 @@
           class="mb-4 h-32 w-full rounded-md object-cover"
           loading="lazy"
         />
-        <h2 class="mb-2 text-xl font-semibold">{{ product.name }}</h2>
-        <p class="mb-4 text-gray-300">{{ product.description }}</p>
-        <p class="mb-4 text-lg font-bold">{{ product.price }} PLN</p>
+        <h2 class="font-playfair mb-2 text-xl font-semibold">
+          {{ product.name }}
+        </h2>
+        <p class="font-lato mb-4 text-gray-300">{{ product.description }}</p>
+        <p class="font-playfair mb-4 text-lg font-bold">
+          {{ product.price }} PLN
+        </p>
         <Button
           @click="buyProduct(product.id)"
           class="bg-green-600 font-bold hover:bg-green-700"
@@ -46,18 +50,18 @@ const products = ref([
     image: '@/assets/products/sample1.webp',
   },
   {
-    id: 1,
-    name: 'Sample Pack 1',
-    description: 'Profesjonalny sample pack z 100 unikalnymi dźwiękami.',
-    price: 49.99,
-    image: '@/assets/products/sample1.webp',
+    id: 2,
+    name: 'Sample Pack 2',
+    description: 'Sample pack z nowoczesnymi dźwiękami perkusji.',
+    price: 59.99,
+    image: '@/assets/products/sample2.webp',
   },
   {
-    id: 1,
-    name: 'Sample Pack 1',
-    description: 'Profesjonalny sample pack z 100 unikalnymi dźwiękami.',
-    price: 49.99,
-    image: '@/assets/products/sample1.webp',
+    id: 3,
+    name: 'Sample Pack 3',
+    description: 'Paczka sampli do produkcji muzyki filmowej.',
+    price: 69.99,
+    image: '@/assets/products/sample3.webp',
   },
 ]);
 

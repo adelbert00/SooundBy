@@ -1,31 +1,34 @@
 <template>
-  <Layout
-    class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
-  >
+  <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center">
-        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">
+        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
           Wojciech Faber
         </h1>
-        <p class="font-bold">Projektant dźwięku i inżynier miksu/masteringu</p>
+        <p class="font-lato text-lg font-normal">
+          Projektant dźwięku i inżynier miksu/masteringu
+        </p>
       </div>
 
       <div
         class="mt-16 grid grid-cols-1 gap-8 sm:place-items-center md:grid-cols-2"
       >
         <div class="sm:text-center md:text-justify">
-          <h2 class="text-3xl font-bold sm:text-3xl md:text-5xl">O mnie</h2>
+          <h2 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
+            O mnie
+          </h2>
           <div
-            class="my-4 w-16 border-b border-primary sm:relative sm:left-1/2 sm:-translate-x-1/2 md:left-8"
+            class="my-4 w-16 border-b border-white sm:relative sm:left-1/2 sm:-translate-x-1/2 md:left-8"
           ></div>
-          <p class="mb-6 text-lg">
+          <p class="font-lato mb-6 text-lg font-normal">
             Jestem pasjonatem nowych technologii i nieustannie poszukuję
             innowacyjnych rozwiązań. Moja misja to tworzenie wysokiej jakości
             produktów, które ułatwiają życie użytkownikom.
           </p>
           <Button
+            variant="outline"
             to="/contact"
-            class="items-center rounded-full bg-purple-600 text-lg font-bold transition duration-300 hover:scale-110 hover:bg-purple-700"
+            class="font-lato items-center rounded-full text-lg font-bold text-black shadow-lg transition duration-300 hover:scale-110"
           >
             Skontaktuj się ze mną
             <ArrowRight class="ml-2 h-5 w-5" />
@@ -33,25 +36,18 @@
         </div>
         <img
           :src="imageSrc"
-          class="rounded-3xl object-cover sm:w-[300px] md:h-full md:w-full"
+          class="rounded-3xl object-cover shadow-md sm:w-[300px] md:h-full md:w-full"
           loading="lazy"
         />
       </div>
 
       <div class="mt-16 text-center md:text-right">
-        <h2 class="text-3xl font-bold md:text-5xl">Usługi</h2>
-        <div
-          class="relative my-4 w-16 border-b border-primary sm:left-1/2 sm:-translate-x-1/2 md:left-8 md:ml-auto"
-        ></div>
+        <h2 class="font-playfair text-3xl font-bold md:text-5xl">Usługi</h2>
+
         <div class="relative ml-auto flex">
           <img
-            src="@/assets/photos/gen9820.png"
-            class="absolute -top-[220px] h-72 w-72 object-cover sm:hidden md:block xl:-top-[220px]"
-            loading="lazy"
-          />
-          <img
             src="@/assets/photos/Adelbert.jpg"
-            class="absolute -top-8 h-40 w-72 rounded-lg object-cover shadow-sm sm:hidden md:block xl:-top-8 xl:h-48"
+            class="absolute -top-8 h-40 w-72 rounded-lg object-cover shadow-xl sm:hidden md:block xl:-top-8 xl:h-48"
             loading="lazy"
           />
           <img
@@ -65,7 +61,12 @@
             Prod.Adelbert
           </Button>
         </div>
-        <ul class="space-y-6 text-base md:text-xs xl:text-lg">
+        <div
+          class="relative my-4 w-16 border-b border-white sm:left-1/2 sm:-translate-x-1/2 md:left-8 md:ml-auto"
+        ></div>
+        <ul
+          class="font-lato space-y-6 text-base font-normal md:text-xs xl:text-lg"
+        >
           <li>
             <strong class="text-sm xl:text-xl">Mix Mastering -</strong>
             Profesjonalne brzmienie, które nada Twojej muzyce głębię i
@@ -87,7 +88,7 @@
         <div
           v-for="(image, index) in images"
           :key="index"
-          class="overflow-hidden rounded-lg bg-gray-800 shadow-lg transition hover:scale-105"
+          class="relative overflow-hidden rounded-lg bg-transparent shadow-lg transition hover:scale-105"
         >
           <img
             :src="image.src"
@@ -95,23 +96,31 @@
             loading="lazy"
           />
           <div class="p-6">
-            <h3 class="text-xl font-semibold">{{ image.title }}</h3>
-            <p class="text-sm text-gray-300">{{ image.description }}</p>
+            <h3 class="font-playfair text-xl font-semibold">
+              {{ image.title }}
+            </h3>
+            <p class="font-lato text-sm text-gray-300">
+              {{ image.description }}
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="mt-20 rounded-lg bg-gray-800 p-8 shadow-xl">
-        <h2 class="mb-10 text-center text-2xl font-bold xl:text-3xl">
+      <div class="mt-20 rounded-lg bg-transparent p-8 shadow-xl">
+        <h2
+          class="font-playfair mb-10 text-center text-2xl font-bold xl:text-3xl"
+        >
           Moje umiejętności
         </h2>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
-            <h3 class="mb-4 text-xl font-bold text-purple-400 xl:text-2xl">
+            <h3
+              class="font-playfair mb-4 text-xl font-bold text-white xl:text-2xl"
+            >
               Specjalizacje
             </h3>
             <ul
-              class="list-inside list-disc space-y-2 text-sm text-gray-300 xl:text-base"
+              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-base"
             >
               <li>Sound design dla gier i filmów</li>
               <li>Komponowanie muzyki</li>
@@ -122,11 +131,13 @@
           </div>
 
           <div>
-            <h3 class="mb-4 text-xl font-bold text-purple-400 xl:text-2xl">
+            <h3
+              class="font-playfair mb-4 text-xl font-bold text-white xl:text-2xl"
+            >
               Narzędzia
             </h3>
             <ul
-              class="list-inside list-disc space-y-2 text-sm text-gray-300 xl:text-base"
+              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-base"
             >
               <li>Pro Tools</li>
               <li>Ableton Live</li>
@@ -139,24 +150,28 @@
       </div>
 
       <div class="mx-auto mt-20 max-w-4xl text-center">
-        <h2 class="mb-6 text-2xl font-bold md:text-3xl xl:text-3xl">
+        <h2
+          class="font-playfair mb-6 text-2xl font-bold md:text-3xl xl:text-3xl"
+        >
           Gotowy na przygodę?
         </h2>
-        <p class="mb-8 text-lg text-purple-200 md:text-xl">
+        <p class="font-lato mb-8 text-lg font-normal text-gray-300 md:text-xl">
           Posłuchaj próbki mojego brzmienia i rozpocznij współpracę już dziś!
         </p>
         <CustomAudioPlayer :src="audioSrc" />
 
         <div class="mt-8 flex justify-center space-x-4">
           <Button
+            variant="outline"
             to="/projects"
-            class="w-60 rounded-full bg-purple-600 text-base font-bold text-white transition hover:scale-105 hover:bg-purple-700 md:text-xl"
+            class="font-lato w-60 rounded-full text-base font-bold text-black shadow-lg transition hover:scale-105 md:text-lg"
           >
             Zobacz Projekty
           </Button>
           <Button
+            variant="outline"
             to="/contact"
-            class="w-60 rounded-full bg-indigo-600 text-base font-bold text-white transition hover:scale-105 hover:bg-indigo-700 md:text-xl"
+            class="font-lato w-60 rounded-full text-base font-bold text-black shadow-lg transition hover:scale-105 md:text-lg"
           >
             Skontaktuj się
           </Button>
@@ -200,3 +215,4 @@ const images = ref([
   },
 ]);
 </script>
+<style scoped></style>

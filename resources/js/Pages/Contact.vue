@@ -1,11 +1,11 @@
 <template>
-  <Layout
-    class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white"
-  >
+  <Layout class="grain-effect min-h-screen text-white">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center">
-        <h1 class="text-2xl font-bold md:text-4xl xl:text-5xl">Kontakt</h1>
-        <p class="text-lg md:text-xl">
+        <h1 class="font-playfair text-2xl font-bold md:text-4xl xl:text-5xl">
+          Kontakt
+        </h1>
+        <p class="font-lato text-lg font-normal md:text-xl">
           Masz pytania lub chcesz współpracować? Skontaktuj się za pomocą
           poniższego formularza lub za pośrednictwem danych kontaktowych.
         </p>
@@ -13,9 +13,11 @@
 
       <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
         <div
-          class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+          class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
         >
-          <h2 class="mb-6 text-xl font-bold md:text-2xl">Wyślij wiadomość</h2>
+          <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
+            Wyślij wiadomość
+          </h2>
           <Form @submit="handleSubmit" class="space-y-6">
             <FormItem
               v-for="field in fields"
@@ -47,8 +49,9 @@
               </span>
             </FormItem>
             <Button
+              variant="outline"
               type="submit"
-              class="w-full transform bg-gradient-to-r from-purple-500 to-indigo-500 text-lg font-semibold transition duration-300 hover:scale-105 hover:from-purple-600 hover:to-indigo-600"
+              class="w-full transform text-lg font-semibold text-black transition duration-300 hover:scale-105"
               :disabled="isLoading"
               aria-label="Wyślij wiadomość"
             >
@@ -60,57 +63,61 @@
 
         <div class="space-y-8">
           <div
-            class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+            class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
           >
-            <h2 class="mb-6 text-xl font-bold md:text-2xl">
+            <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
               Informacje kontaktowe
             </h2>
             <div class="space-y-4">
               <div
-                class="flex items-center transition duration-300 hover:text-purple-300"
+                class="flex items-center transition duration-300 hover:text-gray-200"
               >
-                <Phone class="mr-4 h-6 w-6 text-purple-400" />
+                <Phone class="mr-4 h-6 w-6 text-gray-200" />
                 <span>+48 577 613 812</span>
               </div>
               <div
-                class="flex items-center transition duration-300 hover:text-purple-300"
+                class="flex items-center transition duration-300 hover:text-gray-200"
               >
-                <Mail class="mr-4 h-6 w-6 text-purple-400" />
+                <Mail class="mr-4 h-6 w-6 text-gray-200" />
                 <span>contact@sounddesign.com</span>
               </div>
               <div
-                class="flex items-center transition duration-300 hover:text-purple-300"
+                class="flex items-center transition duration-300 hover:text-gray-200"
               >
-                <MapPin class="mr-4 h-6 w-6 text-purple-400" />
+                <MapPin class="mr-4 h-6 w-6 text-gray-200" />
                 <span>Warszawa, Polska</span>
               </div>
             </div>
           </div>
 
           <div
-            class="rounded-lg bg-gray-800 p-8 shadow-xl transition duration-300 hover:scale-105"
+            class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
           >
-            <h2 class="mb-6 text-xl font-bold md:text-2xl">
+            <h2 class="font-playfair mb-6 text-xl font-bold md:text-2xl">
               Dlaczego warto współpracować ze mną?
             </h2>
             <ul class="space-y-4">
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-purple-500 p-2">
+                <div class="mr-4 rounded-full bg-gray-600 p-2">
                   <Check class="h-6 w-6 text-white" />
                 </div>
-                <span>Ponad 10 lat doświadczenia w produkcji audio</span>
+                <span class="font-lato">
+                  Ponad 10 lat doświadczenia w produkcji audio
+                </span>
               </li>
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-purple-500 p-2">
+                <div class="mr-4 rounded-full bg-gray-600 p-2">
                   <Check class="h-6 w-6 text-white" />
                 </div>
-                <span>Różnorodne portfolio w różnych branżach</span>
+                <span class="font-lato">
+                  Różnorodne portfolio w różnych branżach
+                </span>
               </li>
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-purple-500 p-2">
+                <div class="mr-4 rounded-full bg-gray-600 p-2">
                   <Check class="h-6 w-6 text-white" />
                 </div>
-                <span>
+                <span class="font-lato">
                   Pasja do tworzenia unikalnych doświadczeń dźwiękowych
                 </span>
               </li>
