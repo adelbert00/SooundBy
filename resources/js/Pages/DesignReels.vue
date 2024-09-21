@@ -69,7 +69,7 @@
               <h3 class="font-playfair mb-2 text-xl font-semibold text-white">
                 {{ item.title }}
               </h3>
-              <p class="font-lato font-normal text-gray-300">
+              <p class="font-lato text-base font-normal text-gray-300">
                 {{ item.description }}
               </p>
             </div>

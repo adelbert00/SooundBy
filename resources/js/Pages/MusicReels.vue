@@ -31,7 +31,7 @@
             <h3 class="font-playfair text-xl font-semibold">
               {{ music.title }}
             </h3>
-            <p class="font-lato font-normal text-gray-400">
+            <p class="font-lato text-base font-normal text-gray-400">
               Producent: {{ music.producer }}
             </p>
             <a
@@ -71,7 +71,7 @@
                 Kluczowe Aspekty
               </h3>
               <ul
-                class="font-lato list-inside list-disc space-y-2 text-gray-300"
+                class="font-lato list-inside list-disc space-y-2 text-lg text-gray-300"
               >
                 <li>Głęboka analiza narracji projektu i emocji</li>
                 <li>Eksperymentowanie z różnymi instrumentami i dźwiękami</li>
@@ -89,7 +89,7 @@
                 Proces Twórczy
               </h3>
               <ol
-                class="font-lato list-inside list-decimal space-y-2 text-gray-300"
+                class="font-lato list-inside list-decimal space-y-2 text-lg text-gray-300"
               >
                 <li>Analiza briefu i omówienie wizji z klientem</li>
                 <li>Tworzenie szkiców muzycznych i tematów</li>

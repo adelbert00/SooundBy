@@ -22,7 +22,9 @@
         <h2 class="font-playfair mb-2 text-xl font-semibold">
           {{ product.name }}
         </h2>
-        <p class="font-lato mb-4 text-gray-300">{{ product.description }}</p>
+        <p class="font-lato mb-4 text-lg text-gray-300">
+          {{ product.description }}
+        </p>
         <p class="font-playfair mb-4 text-lg font-bold">
           {{ product.price }} PLN
         </p>

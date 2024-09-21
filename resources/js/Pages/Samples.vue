@@ -24,18 +24,18 @@
             loading="lazy"
           />
           <div class="p-6">
-            <h2 class="font-playfair mb-2 text-lg font-semibold">
+            <h2 class="font-playfair mb-2 text-xl font-semibold">
               {{ pack.name }}
             </h2>
             <ul
-              class="font-lato mb-4 list-inside list-disc text-base font-normal"
+              class="font-lato mb-4 list-inside list-disc text-lg font-normal"
             >
               <li v-for="(item, i) in pack.contents" :key="i">{{ item }}</li>
             </ul>
             <Button
               :to="pack.previewLink"
-              variant="link"
-              class="inline-block transform transition-transform hover:scale-110"
+              variant="outline"
+              class="inline-block transform font-bold text-black transition-transform hover:scale-110"
             >
               Podgląd
             </Button>
@@ -54,11 +54,11 @@
         </h2>
         <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
           <div class="rounded-lg bg-transparent p-6 shadow-lg">
-            <h3 class="font-playfair mb-4 text-xl font-semibold text-gray-200">
+            <h3 class="font-playfair mb-4 text-2xl font-semibold text-gray-200">
               Wskazówki
             </h3>
             <ul
-              class="font-lato list-inside list-disc space-y-2 text-base text-gray-200"
+              class="font-lato list-inside list-disc space-y-2 text-lg text-gray-200"
             >
               <li>
                 Eksperymentuj z warstwowaniem dźwięków dla uzyskania bogatszych
@@ -77,11 +77,11 @@
           </div>
 
           <div class="rounded-lg bg-transparent p-6 shadow-lg">
-            <h3 class="font-playfair mb-4 text-xl font-semibold text-gray-200">
+            <h3 class="font-playfair mb-4 text-2xl font-semibold text-gray-200">
               Proces twórczy
             </h3>
             <ol
-              class="font-lato list-inside list-decimal space-y-2 text-base text-gray-200"
+              class="font-lato list-inside list-decimal space-y-2 text-lg text-gray-200"
             >
               <li>Wybierz odpowiedni sample pack do swojego projektu.</li>
               <li>
@@ -101,10 +101,7 @@
         </div>
       </section>
 
-      <section class="relative mt-20 overflow-hidden rounded-3xl">
-        <div
-          class="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-gray-800 via-black to-white"
-        ></div>
+      <section class="relative mt-20 rounded-3xl">
         <h2
           class="font-playfair mt-10 text-center text-2xl font-bold md:text-3xl"
         >
@@ -125,16 +122,18 @@
               class="mx-auto mb-4 h-40 w-40 rounded-full object-cover shadow-lg"
               loading="lazy"
             />
-            <h3 class="font-playfair mb-2 text-xl font-semibold text-gray-200">
+            <h3 class="font-playfair mb-2 text-2xl font-semibold text-white">
               {{ artist.name }}
             </h3>
-            <p class="font-lato mb-4 text-gray-200">{{ artist.description }}</p>
-            <ul class="font-lato list-inside list-disc space-y-2 text-gray-200">
+            <p class="font-lato mb-4 text-white">
+              {{ artist.description }}
+            </p>
+            <ul class="font-lato list-inside list-disc space-y-2 text-white">
               <li v-for="(track, i) in artist.tracks" :key="i">{{ track }}</li>
             </ul>
           </div>
         </div>
-        <p class="font-lato mt-10 text-center text-sm italic text-gray-200">
+        <p class="font-lato mt-10 text-center text-base italic text-gray-200">
           Zachęcamy do korzystania z naszych darmowych sampli i dołącz do grona
           zadowolonych artystów!
         </p>

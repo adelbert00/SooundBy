@@ -68,18 +68,19 @@
           class="font-lato space-y-6 text-base font-normal md:text-xs xl:text-lg"
         >
           <li>
-            <strong class="text-sm xl:text-xl">Mix Mastering -</strong>
-            Profesjonalne brzmienie, które nada Twojej muzyce głębię i
+            <strong class="text-sm xl:text-xl">Mix Mastering</strong>
+            - Profesjonalne brzmienie, które nada Twojej muzyce głębię i
             klarowność.
           </li>
           <li>
-            <strong class="text-sm xl:text-xl">Recenzja Bitów -</strong>
-            Szczegółowa analiza Twojego bitu z praktycznymi wskazówkami do
+            <strong class="text-sm xl:text-xl">Recenzja</strong>
+            - Szczegółowa analiza Twojej muzyki z praktycznymi wskazówkami do
             udoskonalenia.
           </li>
           <li>
-            <strong class="text-sm xl:text-xl">Produkcja Bitów -</strong>
-            Unikalne bity tworzone z pasją, idealnie oddające Twój styl i wizję.
+            <strong class="text-sm xl:text-xl">Produkcja</strong>
+            - Unikalne produkcje tworzone z pasją, idealnie oddające Twój styl i
+            wizję.
           </li>
         </ul>
       </div>
@@ -99,7 +100,7 @@
             <h3 class="font-playfair text-xl font-semibold">
               {{ image.title }}
             </h3>
-            <p class="font-lato text-sm text-gray-300">
+            <p class="font-lato text-base text-gray-300">
               {{ image.description }}
             </p>
           </div>
@@ -120,11 +121,11 @@
               Specjalizacje
             </h3>
             <ul
-              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-base"
+              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-lg"
             >
               <li>Sound design dla gier i filmów</li>
               <li>Komponowanie muzyki</li>
-              <li>Miksowanie i mastering</li>
+              <li>Miks i mastering</li>
               <li>Nagrywanie i edycja dźwięku</li>
               <li>Tworzenie efektów dźwiękowych</li>
             </ul>
@@ -137,13 +138,13 @@
               Narzędzia
             </h3>
             <ul
-              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-base"
+              class="font-lato list-inside list-disc space-y-2 text-sm text-white xl:text-lg"
             >
-              <li>Pro Tools</li>
+              <li>FL Studio</li>
               <li>Ableton Live</li>
-              <li>Logic Pro X</li>
-              <li>Native Instruments Komplete</li>
-              <li>Izotope RX</li>
+              <li>Arturia</li>
+              <li>UAD Apollo Solo</li>
+              <li>ADAM Audio T5V</li>
             </ul>
           </div>
         </div>
@@ -197,15 +198,15 @@ const imageSrc = new URL('@/assets/photos/prot.jpg', import.meta.url).href;
 const images = ref([
   {
     src: new URL('@/assets/photos/studio1.jpg', import.meta.url).href,
-    title: 'Produkcja Bitów',
+    title: 'Produkcja',
     description:
-      'Unikalne bity tworzone z pasją, idealnie oddające Twój styl i wizję.',
+      'Unikalne produkcję tworzone z pasją, idealnie oddające Twój styl i wizję.',
   },
   {
     src: new URL('@/assets/photos/studio2.jpg', import.meta.url).href,
-    title: 'Recenzja Bitów',
+    title: 'Recenzja',
     description:
-      'Szczegółowa analiza Twojego bitu z praktycznymi wskazówkami do udoskonalenia.',
+      'Szczegółowa analiza Twojej muzyki z praktycznymi wskazówkami do udoskonalenia.',
   },
   {
     src: new URL('@/assets/photos/studio3.jpg', import.meta.url).href,

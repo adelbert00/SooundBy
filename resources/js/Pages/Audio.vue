@@ -58,7 +58,7 @@
                 Korzyści z Wysokiej Jakości Dźwięku
               </h3>
               <ul
-                class="font-lato list-inside list-disc space-y-2 text-gray-300"
+                class="font-lato list-inside list-disc space-y-2 text-lg text-gray-300"
               >
                 <li>Zwiększa immersję i zaangażowanie</li>
                 <li>Buduje atmosferę i wzmacnia emocje</li>
@@ -76,7 +76,7 @@
                 Moje Podejście do Jakości Dźwięku
               </h3>
               <ul
-                class="font-lato list-inside list-disc space-y-2 text-gray-300"
+                class="font-lato list-inside list-disc space-y-2 text-lg text-gray-300"
               >
                 <li>Wykorzystanie najwyższej jakości sprzętu nagrywającego</li>
                 <li>

@@ -9,31 +9,23 @@ export const popularArtists: PopularArtist[] = [
     name: 'A$AP ANT',
     description:
       'Znany raper pochodzący z Baltimore, USA. Od lat wierny członek kolektywu A$AP MOB',
-    imageSrc: getImageUrl('studio1.jpg'),
-    tracks: [
-      'Track 1 - Wydany 2021',
-      'Track 2 - Wydany 2020',
-      'Track 3 - Wydany 2019',
-    ],
+    imageSrc: getImageUrl('ant.jpg'),
+    tracks: ['A$AP ANT - Devil May Cry'],
   },
   {
     name: 'ĆPAJSTAJL',
     description: 'Legendarny twórca muzyki elektronicznej.',
-    imageSrc: getImageUrl('studio2.jpg'),
+    imageSrc: getImageUrl('cpajstajl.png'),
     tracks: [
-      'Hit 1 - Wydany 2022',
-      'Hit 2 - Wydany 2020',
-      'Hit 3 - Wydany 2018',
+      'ĆPAJ STAJL - Muszę się wyszumieć',
+      'ĆPAJ STAJL - Nie chce więcej miłości',
+      'ĆPAJ STAJL - Tolkien',
     ],
   },
   {
-    name: 'Gen9820',
+    name: 'Abram Montana',
     description: 'Pionier nowoczesnego hip-hopu.',
-    imageSrc: getImageUrl('studio3.jpg'),
-    tracks: [
-      'Singiel 1 - Wydany 2021',
-      'Singiel 2 - Wydany 2019',
-      'Singiel 3 - Wydany 2017',
-    ],
+    imageSrc: getImageUrl('abram.jpg'),
+    tracks: ['Abram Montana - Prawdziwy Trap', 'Abram Montana - Dwie Zajawki'],
   },
 ];
