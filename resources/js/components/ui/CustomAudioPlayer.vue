@@ -2,12 +2,12 @@
   <div class="mb-8 flex items-center justify-center space-x-4">
     <Button
       @click="togglePlay"
-      class="w-10 rounded-full bg-gray-300 font-bold text-white transition hover:scale-125 xl:w-20"
+      class="w-10 rounded-full bg-gray-300 font-bold text-black transition hover:scale-125 xl:w-20"
     >
       <component :is="isPlaying ? Pause : Play" :size="30" />
     </Button>
     <div class="flex items-center space-x-2">
-      <Volume2 :size="24" class="text-gray-300" />
+      <Volume2 :size="24" class="text-black" />
       <input
         type="range"
         min="0"
@@ -18,7 +18,7 @@
       />
     </div>
   </div>
-  <p class="italic text-white">
+  <p class="italic text-black">
     {{
       isPlaying ? 'Słuchasz próbki dźwięku...' : 'Kliknij play, aby posłuchać!'
     }}

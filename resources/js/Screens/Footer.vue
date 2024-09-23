@@ -1,7 +1,7 @@
 <template>
-  <footer class="relative bg-transparent text-white">
+  <footer class="relative bg-transparent text-black">
     <div
-      class="absolute left-1/2 w-[360px] -translate-x-1/2 justify-center border-b-2 border-white md:w-[720px] xl:w-[1280px]"
+      class="absolute left-1/2 w-[360px] -translate-x-1/2 justify-center border-b-2 border-black md:w-[720px] xl:w-[1280px]"
     ></div>
 
     <section
@@ -12,7 +12,7 @@
           class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0"
         >
           <div class="text-center md:text-left">
-            <p class="font-playfair text-lg font-semibold">
+            <p class="text-xl font-bold">
               <strong>Zapisz się do naszego newslettera</strong>
             </p>
           </div>
@@ -20,7 +20,7 @@
           <div class="flex w-full max-w-md items-center md:w-auto">
             <Input
               type="email"
-              class="w-full rounded bg-transparent font-playfair font-bold text-white placeholder:text-white focus:placeholder:text-transparent md:w-auto"
+              class="w-full rounded bg-transparent text-base font-bold text-black placeholder:text-black focus:placeholder:text-transparent md:w-auto"
               placeholder="Adres e-mail"
               v-model="formData.email"
               name="email"
@@ -28,7 +28,7 @@
             />
             <Button
               type="submit"
-              class="hover:bg-primary-dark ml-2 rounded-lg bg-gray-300 px-4 py-2 text-lg font-bold shadow-md"
+              class="hover:bg-primary-dark ml-2 rounded-lg bg-gray-300 px-10 text-xl font-bold shadow-md"
               :disabled="isLoading"
               aria-label="Subscribe"
             >
@@ -57,54 +57,54 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
+          class="transform text-black transition-colors duration-300 hover:scale-110"
         >
-          <Facebook class="h-6 w-6" />
+          <Facebook class="h-8 w-8" />
         </a>
         <a
           href="https://twitter.com/yourprofile"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
-          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
+          class="transform text-black transition-colors duration-300 hover:scale-110"
         >
-          <Twitter class="h-6 w-6" />
+          <Twitter class="h-8 w-8" />
         </a>
         <a
           href="https://instagram.com/yourprofile"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
+          class="transform text-black transition-colors duration-300 hover:scale-110"
         >
-          <Instagram class="h-6 w-6" />
+          <Instagram class="h-8 w-8" />
         </a>
         <a
           href="https://linkedin.com/in/yourprofile"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
+          class="transform text-black transition-colors duration-300 hover:scale-110"
         >
-          <Linkedin class="h-6 w-6" />
+          <Linkedin class="h-8 w-8" />
         </a>
         <a
           href="https://github.com/yourprofile"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          class="transform text-gray-300 transition-colors duration-300 hover:scale-110"
+          class="transform text-black transition-colors duration-300 hover:scale-110"
         >
-          <Github class="h-6 w-6" />
+          <Github class="h-8 w-8" />
         </a>
       </div>
     </section>
 
-    <div class="p-4 text-center font-lato">
+    <div class="p-4 text-center text-lg font-bold">
       © 2024 Copyright:
       <a
         href="https://tw-elements.com/"
-        class="text-gray-300"
+        class="text-black"
         target="_blank"
         rel="noopener noreferrer"
       >

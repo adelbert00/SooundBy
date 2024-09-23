@@ -1,13 +1,13 @@
 <template>
-  <Layout class="grain-effect min-h-screen text-white">
+  <Layout class="grain-effect min-h-screen text-black">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center" data-aos="fade-up">
-        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
-          Kontakt
-        </h1>
-        <p class="font-lato text-lg font-normal md:text-xl">
-          Masz pytania lub chcesz współpracować? Skontaktuj się za pomocą
-          poniższego formularza lub za pośrednictwem danych kontaktowych.
+        <h1 class="text-3xl font-bold sm:text-3xl md:text-5xl">Kontakt</h1>
+        <p class="text-lg font-bold md:text-xl">
+          Masz pytania lub chcesz współpracować?
+          <br />
+          Skontaktuj się za pomocą poniższego formularza lub za pośrednictwem
+          danych kontaktowych.
         </p>
       </div>
 
@@ -18,9 +18,7 @@
         <div
           class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
         >
-          <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
-            Wyślij wiadomość
-          </h2>
+          <h2 class="mb-6 text-xl font-bold md:text-2xl">Wyślij wiadomość</h2>
           <Form @submit="handleSubmit" class="space-y-6">
             <FormItem
               v-for="field in fields"
@@ -54,7 +52,7 @@
             <Button
               variant="outline"
               type="submit"
-              class="w-full transform text-lg font-semibold text-black transition duration-300 hover:scale-105"
+              class="mx-auto mt-8 flex w-64 rounded-full px-4 py-2 text-xl font-bold text-black shadow-lg transition-transform hover:scale-105"
               :disabled="isLoading"
               aria-label="Wyślij wiadomość"
             >
@@ -66,29 +64,27 @@
 
         <div class="space-y-8" data-aos="fade-left">
           <div
-            class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
+            class="rounded-lg p-8 font-bold shadow-lg transition duration-300 hover:scale-105"
           >
-            <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
-              Informacje kontaktowe
-            </h2>
+            <h2 class="mb-6 text-xl md:text-2xl">Informacje kontaktowe</h2>
             <div class="space-y-4">
               <div
-                class="flex items-center transition duration-300 hover:text-gray-200"
+                class="flex items-center transition duration-300 hover:text-black"
               >
-                <Phone class="mr-4 h-6 w-6 text-gray-200" />
-                <span>+48 577 613 812</span>
+                <Phone class="mr-4 h-6 w-6 text-xl text-black" />
+                <span class="text-xl">+48 577 613 012</span>
               </div>
               <div
-                class="flex items-center transition duration-300 hover:text-gray-200"
+                class="flex items-center transition duration-300 hover:text-black"
               >
-                <Mail class="mr-4 h-6 w-6 text-gray-200" />
-                <span>contact@sounddesign.com</span>
+                <Mail class="mr-4 h-6 w-6 text-black" />
+                <span class="text-xl">tazor1337@sooundBy.com</span>
               </div>
               <div
-                class="flex items-center transition duration-300 hover:text-gray-200"
+                class="flex items-center transition duration-300 hover:text-black"
               >
-                <MapPin class="mr-4 h-6 w-6 text-gray-200" />
-                <span>Warszawa, Polska</span>
+                <MapPin class="mr-4 h-6 w-6 text-black" />
+                <span class="text-xl">Kraków, Polska</span>
               </div>
             </div>
           </div>
@@ -97,31 +93,31 @@
             class="rounded-lg p-8 shadow-lg transition duration-300 hover:scale-105"
             data-aos="zoom-in"
           >
-            <h2 class="mb-6 font-playfair text-xl font-bold md:text-2xl">
+            <h2 class="mb-6 text-xl font-bold md:text-2xl">
               Dlaczego warto współpracować ze mną?
             </h2>
             <ul class="space-y-4">
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-gray-600 p-2">
-                  <Check class="h-6 w-6 text-white" />
+                <div class="mr-4 rounded-full bg-gray-400 p-2">
+                  <Check class="h-6 w-6 text-black" />
                 </div>
-                <span class="font-lato">
+                <span class="text-xl font-bold">
                   Ponad 10 lat doświadczenia w produkcji audio
                 </span>
               </li>
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-gray-600 p-2">
-                  <Check class="h-6 w-6 text-white" />
+                <div class="mr-4 rounded-full bg-gray-400 p-2">
+                  <Check class="h-6 w-6 text-black" />
                 </div>
-                <span class="font-lato">
+                <span class="text-xl font-bold">
                   Różnorodne portfolio w różnych branżach
                 </span>
               </li>
               <li class="flex items-center">
-                <div class="mr-4 rounded-full bg-gray-600 p-2">
-                  <Check class="h-6 w-6 text-white" />
+                <div class="mr-4 rounded-full bg-gray-400 p-2">
+                  <Check class="h-6 w-6 text-black" />
                 </div>
-                <span class="font-lato">
+                <span class="text-xl font-bold">
                   Pasja do tworzenia unikalnych doświadczeń dźwiękowych
                 </span>
               </li>
@@ -133,6 +129,21 @@
       <Testimonials data-aos="fade-up" />
 
       <Modal :message="modalMessage" v-model:isVisible="isModalVisible" />
+    </section>
+
+    <section class="relative mt-20 text-center" data-aos="fade-up">
+      <h2 class="text-2xl font-bold md:text-3xl">Zaufaj doświadczeniu</h2>
+      <p class="mt-4 text-xl font-bold text-black">
+        Skontaktuj się teraz i rozpocznijmy współpracę, która przeniesie Twój
+        projekt na nowy poziom!
+      </p>
+      <Button
+        variant="outline"
+        class="mx-auto mt-8 flex w-64 rounded-full px-4 py-2 text-xl font-bold text-black shadow-lg transition-transform hover:scale-105"
+        :to="'/contact'"
+      >
+        Napisz teraz
+      </Button>
     </section>
   </Layout>
 </template>

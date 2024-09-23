@@ -1,8 +1,8 @@
 <template>
   <section
-    class="mx-auto w-full max-w-7xl bg-transparent px-4 py-12 text-white"
+    class="mx-auto w-full max-w-7xl bg-transparent px-4 py-12 text-black"
   >
-    <h2 class="font-playfair mb-8 text-center text-2xl font-bold md:text-3xl">
+    <h2 class="mb-8 text-center font-playfair text-2xl font-bold md:text-3xl">
       Opinie Klientów
     </h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -11,11 +11,11 @@
         :key="index"
         class="rounded-lg p-6 shadow-lg transition-transform hover:scale-105"
       >
-        <p class="font-lato mb-4 text-gray-300">"{{ testimonial.quote }}"</p>
+        <p class="mb-4 font-lato text-black">"{{ testimonial.quote }}"</p>
         <h3 class="font-playfair text-xl font-semibold">
           {{ testimonial.name }}
         </h3>
-        <p class="font-lato text-gray-400">{{ testimonial.position }}</p>
+        <p class="font-lato text-black">{{ testimonial.position }}</p>
       </div>
     </div>
   </section>

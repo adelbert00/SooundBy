@@ -1,11 +1,9 @@
 <template>
-  <Layout class="grain-effect min-h-screen text-white">
+  <Layout class="grain-effect min-h-screen text-black">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="text-center" data-aos="fade-up">
-        <h1 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
-          Sekcje Audio
-        </h1>
-        <p class="font-lato text-lg font-normal md:text-xl">
+        <h1 class="text-3xl font-bold sm:text-3xl md:text-5xl">Sekcje Audio</h1>
+        <p class="font-lato text-lg font-bold md:text-xl">
           Poniżej znajdują się różne sekcje zawierające różne typy odtwarzaczy
           audio, w tym partytury muzyczne, efekty dźwiękowe, przykłady foley i
           przykłady perkusji. Przeglądaj każdą sekcję, aby znaleźć różne rodzaje
@@ -20,13 +18,11 @@
         <div
           v-for="(track, index) in audioCategories"
           :key="index"
-          class="overflow-hidden rounded-3xl border-4 border-gray-200 bg-transparent p-8 shadow-lg transition duration-300 hover:scale-105"
+          class="overflow-hidden rounded-3xl border-4 border-gray-200 bg-transparent p-8 font-bold shadow-lg transition duration-300 hover:scale-105"
           :class="track.color"
           data-aos="zoom-in"
         >
-          <h2
-            class="mb-6 font-playfair text-xl font-bold text-white md:text-2xl"
-          >
+          <h2 class="mb-6 text-xl font-bold text-black md:text-2xl">
             {{ track.title }}
           </h2>
           <div class="space-y-4">
@@ -49,7 +45,7 @@
         ></div>
         <div class="mt-8 rounded-lg p-8 shadow-xl">
           <h2
-            class="mb-8 text-center font-playfair text-2xl font-bold xl:text-4xl"
+            class="mb-8 text-center text-2xl font-bold xl:text-3xl"
             data-aos="fade-right"
           >
             Dlaczego Jakość Dźwięku Jest Ważna
@@ -59,13 +55,11 @@
               class="rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
               data-aos="zoom-in"
             >
-              <h3
-                class="mb-4 font-playfair text-xl font-semibold text-gray-200 md:text-2xl"
-              >
+              <h3 class="mb-4 text-xl font-bold text-black md:text-2xl">
                 Korzyści z Wysokiej Jakości Dźwięku
               </h3>
               <ul
-                class="list-inside list-disc space-y-2 font-lato text-lg text-gray-300"
+                class="list-inside list-disc space-y-2 text-lg font-bold text-black xl:text-xl"
               >
                 <li>Zwiększa immersję i zaangażowanie</li>
                 <li>Buduje atmosferę i wzmacnia emocje</li>
@@ -78,13 +72,11 @@
               class="rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
               data-aos="zoom-in"
             >
-              <h3
-                class="mb-4 font-playfair text-xl font-semibold text-gray-200 md:text-2xl"
-              >
+              <h3 class="mb-4 text-xl font-bold text-black md:text-2xl">
                 Moje Podejście do Jakości Dźwięku
               </h3>
               <ul
-                class="list-inside list-disc space-y-2 font-lato text-lg text-gray-300"
+                class="list-inside list-disc space-y-2 text-lg font-bold text-black xl:text-xl"
               >
                 <li>Wykorzystanie najwyższej jakości sprzętu nagrywającego</li>
                 <li>

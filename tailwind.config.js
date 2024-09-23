@@ -105,15 +105,14 @@ export default {
         '2xl': '8rem',
       },
       fontFamily: {
-        lato: ['Lato', 'sans-serif'],
-        playfair: ['Playfair Display', 'serif'],
+        lineal: ['Lineal'],
       },
       boxShadow: {
-        sm: '0px 1px 3px rgba(209, 213, 219, 0.5)',
-        md: '0px 4px 6px rgba(209, 213, 219, 0.6)',
-        lg: '0px 10px 15px rgba(209, 213, 219, 0.7)',
-        xl: '0px 20px 25px rgba(209, 213, 219, 0.8)',
-        xxl: '0px 40px 50px rgba(255, 255, 255, 0.6)',
+        sm: '0px 1px 3px rgba(0, 0, 0, 0.7)',
+        md: '0px 4px 6px rgba(0, 0, 0, 0.75)',
+        lg: '0px 10px 15px rgba(0, 0, 0, 0.85)',
+        xl: '0px 20px 25px rgba(0, 0, 0, 0.9)',
+        xxl: '0px 40px 50px rgba(0, 0, 0, 0.95)',
       },
       textShadow: {
         custom: '0px 0px 25px 0px var(--gray-300, #858585)',

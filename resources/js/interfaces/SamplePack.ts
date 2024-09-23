@@ -5,4 +5,7 @@ export interface SamplePack {
   name: string;
   contents: string[];
   previewLink: string;
+  genre: string;
+  soundType: string;
+  projectType: string;
 }

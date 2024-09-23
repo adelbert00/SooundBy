@@ -1,8 +1,8 @@
 <template>
   <section class="mx-auto w-full max-w-7xl px-4 pt-10">
     <div class="text-center">
-      <h1 class="font-playfair text-2xl font-bold md:text-3xl">Sklep</h1>
-      <p class="font-lato text-lg font-normal md:text-xl">
+      <h1 class="text-2xl font-bold md:text-3xl">Sklep</h1>
+      <p class="text-lg font-bold md:text-xl">
         Kupuj moje sample packi i usługi audio bezpośrednio tutaj.
       </p>
     </div>
@@ -19,18 +19,16 @@
           class="mb-4 h-32 w-full rounded-md object-cover"
           loading="lazy"
         />
-        <h2 class="mb-2 font-playfair text-xl font-semibold">
+        <h2 class="mb-2 text-2xl font-bold">
           {{ product.name }}
         </h2>
-        <p class="mb-4 font-lato text-lg text-gray-300">
+        <p class="mb-4 text-lg font-bold text-black">
           {{ product.description }}
         </p>
-        <p class="mb-4 font-playfair text-lg font-bold">
-          {{ product.price }} PLN
-        </p>
+        <p class="mb-4 text-xl font-bold">{{ product.price }} PLN</p>
         <Button
           @click="buyProduct(product.id)"
-          class="bg-green-600 font-bold hover:bg-green-700"
+          class="bg-green-600 text-xl font-bold hover:bg-green-700"
         >
           Kup teraz
         </Button>

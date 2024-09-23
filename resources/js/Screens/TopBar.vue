@@ -6,7 +6,7 @@
       data-aos="fade-down"
       data-aos-duration="2000"
       data-aos-delay="200"
-      src="/resources/js/assets/photos/logo.png"
+      src="/resources/js/assets/photos/logo_black.png"
       class="relative -top-[76px] w-60"
     />
 
@@ -15,13 +15,13 @@
       class="relative -top-20 z-20 block p-2 md:hidden"
     >
       <div v-if="!isMenuOpen" class="space-y-1">
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="block h-0.5 w-6 bg-black"></span>
+        <span class="block h-0.5 w-6 bg-black"></span>
+        <span class="block h-0.5 w-6 bg-black"></span>
       </div>
 
       <div v-else>
-        <span class="block w-6 text-white">✖</span>
+        <span class="block w-6 text-black">✖</span>
       </div>
     </Button>
 
@@ -35,7 +35,7 @@
       >
         <Link
           :href="getHref(section.id)"
-          class="text-base font-bold text-white md:text-xl"
+          class="text-base font-bold text-black md:text-2xl"
           @click="closeMenu"
         >
           {{ section.name }}
@@ -48,14 +48,10 @@
       class="absolute right-0 top-12 z-10 flex flex-col p-5 text-right md:hidden"
     >
       <ul class="flex flex-col">
-        <li
-          v-for="section in navigationSections"
-          :key="section.id"
-          class="transition-transform duration-300 hover:scale-125"
-        >
+        <li v-for="section in navigationSections" :key="section.id">
           <Link
             :href="getHref(section.id)"
-            class="text-base font-bold text-white"
+            class="text-base font-bold text-black"
             @click="closeMenu"
           >
             {{ section.name }}
@@ -86,3 +82,4 @@ const getHref = (id: string) => {
   return id === 'about' ? '/' : `/${id}`;
 };
 </script>
+<style scooped></style>

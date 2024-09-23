@@ -13,7 +13,7 @@
       data-aos="fade-down"
       v-if="showScrollButton"
       @click="scrollToTop"
-      class="fixed bottom-4 right-4 z-50 h-12 w-12 rounded-xl border-2 font-playfair text-lg font-bold text-white transition-all hover:scale-125"
+      class="fixed bottom-4 right-4 z-50 h-14 w-14 rounded-xl border-2 border-black font-playfair text-xl font-bold text-black transition-all hover:scale-125"
     >
       TOP
     </Button>

@@ -6,13 +6,13 @@
 
 @layer base {
   body {
-    @apply overflow-x-hidden;
+    @apply font-lineal overflow-x-hidden;
   }
 
   /* Efekt grain na każdej stronie */
   .grain-effect {
     position: relative;
-    background: url('/resources/js/assets/photos/darkened_background.jpg');
+    background: url('/resources/js/assets/photos/inverted_background.jpg');
     width: 100%;
     height: 100%;
     background-position: center;
@@ -28,9 +28,24 @@
     width: 100%;
     height: 100%;
     background: url('/resources/js/assets/photos/grain.jpg');
-    opacity: 0.1;
+    opacity: 0.06;
     z-index: 10;
     pointer-events: none;
     mix-blend-mode: multiply;
+    background-repeat: repeat;
+  }
+  .grain-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/resources/js/assets/photos/paper.jpg');
+    opacity: 0.3;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    background-repeat: repeat;
   }
 }

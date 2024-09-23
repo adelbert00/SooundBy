@@ -1,25 +1,25 @@
 <template>
-  <Layout class="grain-effect min-h-screen text-white">
+  <Layout class="grain-effect min-h-screen text-black">
     <section class="mx-auto w-[360px] md:w-full md:max-w-4xl xl:max-w-7xl">
       <div class="grid grid-cols-1 gap-8 sm:place-items-center md:grid-cols-2">
         <div data-aos="fade-right" class="sm:text-center md:text-justify">
-          <h2 class="font-playfair text-3xl font-bold sm:text-3xl md:text-5xl">
-            O mnie
-          </h2>
+          <h2 class="font-bold sm:text-3xl md:text-4xl">O mnie</h2>
           <div
             class="my-4 w-16 border-b border-white sm:relative sm:left-1/2 sm:-translate-x-1/2 md:left-8"
           ></div>
-          <p class="mb-6 font-playfair font-bold">
+          <p class="mb-6 text-xl font-bold">
             Jestem pasjonatem nowych technologii i nieustannie poszukuję
-            innowacyjnych rozwiązań. Moja misja to tworzenie wysokiej jakości
-            produktów, które ułatwiają życie użytkownikom.
+            innowacyjnych rozwiązań.
+            <br />
+            Moja misja to tworzenie wysokiej jakości produktów, które ułatwiają
+            życie użytkownikom.
           </p>
 
           <Link
             href="/contact"
-            class="w-60 rounded-full bg-white px-4 py-2 font-lato text-base font-bold text-black shadow-lg md:text-xl"
+            class="flex w-60 justify-center space-x-4 rounded-full bg-white px-4 py-2 text-base font-bold text-black shadow-lg md:text-xl"
           >
-            Skontaktuj się ze mną
+            Skontaktuj się
           </Link>
         </div>
         <img
@@ -31,17 +31,18 @@
       </div>
 
       <div data-aos="fade-left" class="mt-16 text-center md:text-right">
-        <h2 class="font-playfair text-3xl font-bold md:text-5xl">Usługi</h2>
+        <h2 class="text-3xl font-bold md:text-5xl">Usługi</h2>
         <div
           class="relative my-4 w-16 border-b border-white sm:left-1/2 sm:-translate-x-1/2 md:left-8 md:ml-auto"
         ></div>
         <p
-          class="max-w-[640px] font-playfair font-bold sm:text-center md:ml-auto md:text-right"
+          class="max-w-[640px] text-xl font-bold sm:text-center md:ml-auto md:text-right"
         >
           Oferuję szeroką gamę profesjonalnych usług, które pomogą wynieść Twoje
-          projekty muzyczne na wyższy poziom. Wysokiej jakości nagrania, miks i
-          mastering, a także kompleksowa produkcja muzyczna to tylko niektóre z
-          moich specjalizacji.
+          projekty muzyczne na wyższy poziom.
+          <br />
+          Wysokiej jakości nagrania, miks i mastering, a także kompleksowa
+          produkcja muzyczna to tylko niektóre z moich specjalizacji.
         </p>
       </div>
 
@@ -58,10 +59,10 @@
             loading="lazy"
           />
           <div class="p-6">
-            <h3 class="font-playfair text-xl font-semibold">
+            <h3 class="text-2xl font-bold">
               {{ image.title }}
             </h3>
-            <p class="font-lato text-base font-bold text-white">
+            <p class="mt-2 text-xl font-bold text-black">
               {{ image.description }}
             </p>
           </div>
@@ -72,20 +73,16 @@
         data-aos="flip-left"
         class="mt-20 rounded-lg bg-transparent p-8 shadow-xl"
       >
-        <h2
-          class="mb-10 text-center font-playfair text-2xl font-bold xl:text-3xl"
-        >
+        <h2 class="mb-10 text-center text-2xl font-bold xl:text-3xl">
           Moje umiejętności
         </h2>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
-            <h3
-              class="mb-4 font-playfair text-xl font-bold text-white xl:text-2xl"
-            >
+            <h3 class="mb-4 text-xl font-bold text-black xl:text-2xl">
               Specjalizacje
             </h3>
             <ul
-              class="list-inside list-disc space-y-2 font-playfair text-sm font-bold text-white xl:text-lg"
+              class="list-inside list-disc space-y-2 text-base font-bold text-black xl:text-xl"
             >
               <li>Sound design dla gier i filmów</li>
               <li>Komponowanie muzyki</li>
@@ -96,13 +93,11 @@
           </div>
 
           <div>
-            <h3
-              class="mb-4 font-playfair text-xl font-bold text-white xl:text-2xl"
-            >
+            <h3 class="mb-4 text-xl font-bold text-black xl:text-2xl">
               Narzędzia
             </h3>
             <ul
-              class="list-inside list-disc space-y-2 font-playfair text-sm font-bold text-white xl:text-lg"
+              class="list-inside list-disc space-y-2 text-base font-bold text-black xl:text-xl"
             >
               <li>FL Studio</li>
               <li>Ableton Live</li>
@@ -119,12 +114,10 @@
         data-aos-anchor-placement="bottom-bottom"
         class="mx-auto max-w-4xl text-center sm:mt-20 xl:mt-40"
       >
-        <h2
-          class="mb-6 font-playfair text-2xl font-bold md:text-3xl xl:text-3xl"
-        >
+        <h2 class="mb-6 text-2xl font-bold md:text-3xl xl:text-3xl">
           Gotowy na przygodę?
         </h2>
-        <p class="mb-8 font-lato text-lg text-white md:text-xl">
+        <p class="mb-8 text-lg font-bold text-black md:text-xl">
           Posłuchaj próbki mojego brzmienia i rozpocznij współpracę już dziś!
         </p>
         <CustomAudioPlayer :src="audioSrc" />
@@ -132,13 +125,13 @@
         <div class="mt-8 flex justify-center space-x-4">
           <Link
             href="/samples"
-            class="w-60 rounded-full bg-white px-4 py-2 font-lato text-base font-bold text-black shadow-lg md:text-xl"
+            class="w-60 rounded-full bg-white px-4 py-2 text-base font-bold text-black shadow-lg md:text-xl"
           >
             Zobacz Projekty
           </Link>
           <Link
             href="/contact"
-            class="w-60 rounded-full bg-white px-4 py-2 font-lato text-base font-bold text-black shadow-lg md:text-xl"
+            class="w-60 rounded-full bg-white px-4 py-2 text-base font-bold text-black shadow-lg md:text-xl"
           >
             Skontaktuj się
           </Link>
